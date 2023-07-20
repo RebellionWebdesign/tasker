@@ -12,4 +12,4 @@ const newDay = new Date();
 let dayOfWeek = day[newDay.getDay()];
 console.log(dayOfWeek);
 
-document.getElementsByClassName("day").innerHTML = dayOfWeek;
+document.getElementsByClassName("footer__container__day").innerHTML = dayOfWeek;
