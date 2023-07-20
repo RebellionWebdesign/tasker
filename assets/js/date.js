@@ -10,5 +10,6 @@
 const day = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
 const newDay = new Date();
 let dayOfWeek = day[newDay.getDay()];
+console.log(dayOfWeek);
 
 document.getElementsByClassName("day").innerHTML = dayOfWeek;
