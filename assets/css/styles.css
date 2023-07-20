@@ -15,6 +15,15 @@ and every before/after pseudo elements */
     margin: 0;
 }
 
+/*Fluid heading sizes - this means the headings scale automagically depending on the screen width*/
+h1 {
+    font-size: clamp(1.25rem, 2vw + 1rem, 1.875rem);
+}
+
+h2 {
+    font-size: clamp(1.25rem, 2vw + 1rem, 1.5rem);
+}
+
 body {
     overflow-x: hidden; /*disables horizontal scrolling*/
     display: flex;
