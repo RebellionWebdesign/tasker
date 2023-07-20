@@ -57,6 +57,24 @@ header {
     border-bottom: 1px solid black;
 }
 
+footer {
+    width: 100vw;
+    height: 6vh;
+    padding: 10px 277px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
 .header__container__logo {
     font-family: montserrat, sans-serif;
     font-weight: 800;
