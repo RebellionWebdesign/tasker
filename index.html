@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <title>TASKER</title>
 </head>
-<body>
+<body onload="clock()">
     <header>
         <div class="header__container">
             <h1 class="header__container__logo">TASKER</h1>
@@ -31,12 +31,13 @@
                 <div id="day" class="footer__container__day"></div>
                 <div id="date" class="footer__container__date"></div>
             </div>
-            <div class="container__date-wrapper">
-                <div id="time" class="footer__container__day"></div>
-                <div id="daytime" class="footer__container__date"></div>
+            <div class="container__time-wrapper">
+                <div id="time" class="footer__container__time"></div>
+                <div id="daytime" class="footer__container__daytime"></div>
             </div>
         </div>
     </footer>
     <script type="text/javascript" src="assets/js/date.js"></script>
+    <script type="text/javascript" src="assets/js/clock.js"></script>
 </body>
 </html>
