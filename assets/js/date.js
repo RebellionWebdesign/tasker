@@ -10,6 +10,8 @@
 const day = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
 const newDay = new Date();
 let dayOfWeek = day[newDay.getDay()];
-console.log(dayOfWeek);
 
-document.getElementsByClassName("footer__container__day").innerHTML = dayOfWeek;
+let currentDate = new Date().toLocaleDateString("de-DE");
+
+document.getElementById("day").innerHTML = dayOfWeek;
+document.getElementById("date").innerHTML = currentDate;
