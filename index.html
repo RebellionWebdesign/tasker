@@ -23,14 +23,26 @@
     <main>
         <section>
             <div class="section__container">
-                <div class="container__tasklist"></div>
+                <div class="container__tasklist">
+                    <div class="container__tasklist__header">
+                        <ul>
+                            <li>TASKNAME</li>
+                            <li>TIMESTAMP</li>
+                            <li>STARTED</li>
+                            <li>DEADLINE</li>
+                            <li>FINISHED</li>
+                            <li>TIMER</li>
+                            <li>OPTIONS</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="container__addbutton">
                     <div id="form" class="container__task_form">
                         <label for="taskname">ENTER TASKNAME:</label>
                         <input type="text" id="taskname" name="taskname" required minlength="10" maxlength="30" size="35">
                         <label for="taskname">ENTER DEADLINE:</label>
                         <input type="datetime-local" id="datetime" name="datetime">
-                        <input type="submit">
+                        <input type="submit" value="ADD TASK">
                     </div>
                     <img id="addbutton" src="assets/images/svg/circle-plus-solid.svg" alt="the add task button">
                 </div>
