@@ -7,11 +7,13 @@
 *
 */
 
-const day = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
-const newDay = new Date();
-let dayOfWeek = day[newDay.getDay()];
+function date() {
+    const day = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+    const newDay = new Date();
+    let dayOfWeek = day[newDay.getDay()];
 
-let currentDate = new Date().toLocaleDateString("de-DE");
+    let currentDate = new Date().toLocaleDateString("de-DE");
 
-document.getElementById("day").innerHTML = dayOfWeek;
-document.getElementById("date").innerHTML = currentDate;
+    document.getElementById("day").innerHTML = dayOfWeek;
+    document.getElementById("date").innerHTML = currentDate;
+}
