@@ -87,6 +87,26 @@ closeButton.addEventListener("click", () => {
     form.classList.add("hide")
 })
 
+/* This function hides the greeter text when the tasklist is empty.
+*
+*/
+
+function hideGreeter() {
+    let emptyList = document.getElementById("todo-container").innerHTML.trim()
+    let taskListHeader = document.getElementById("tasklist-container")
+    let toDoList = document.getElementById("todo-container")
+
+    if (emptyList == "") {
+        taskListHeader.classList.add("hide")
+        toDoList.classList.add("hide")
+    } else {
+        taskListHeader.classList.remove("hide")
+        toDoList.classList.remove("hide")
+    }
+}
+
+document.addEventListener("DOMContentLoaded", hideGreeter())
+
 /* This script controls the behaviour of the add task form.
 *
 */
