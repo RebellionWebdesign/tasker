@@ -100,6 +100,50 @@ section {
     margin-bottom: 20px;
 }
 
+.list-item {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    font-family: poppins, sans-serif;
+    text-align: left;
+}
+
+.list-item > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.list-item > ul > li:nth-child(2) {
+    margin-left: 10px; 
+}
+
+.list-item > ul > li:nth-child(3) {
+    margin-left: -60px; 
+}
+
+.list-item > ul > li:nth-child(4) {
+    margin-left: -10px; 
+}
+
+.list-item ul > li ul > li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.option-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 10px;
+    margin-top: 3.5px;
+}
+
 .container__tasklist__greeter--wrapper > h1 {
     font-family: montserrat, sans-serif;
     font-weight: 800;
@@ -334,7 +378,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    src: url('assets/fonts/montserrat/montserrat-v25-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/assets/fonts/montserrat/montserrat-v25-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   /* montserrat-800 - latin */
   @font-face {
@@ -342,7 +386,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 800;
-    src: url('assets/fonts/montserrat/montserrat-v25-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/assets/fonts/montserrat/montserrat-v25-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
   /* poppins-regular - latin */
@@ -351,5 +395,5 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    src: url('assets/fonts/poppins/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/assets/fonts/poppins/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
