@@ -1,3 +1,5 @@
+
+
 /* This part of main.js displays the day of the week and the current date on the left ide of the footer.
 *  The exlanations is top to bottom:
 *  First we declare an array as a constant. It holds the weekdays as strings.
@@ -110,6 +112,18 @@ document.addEventListener("DOMContentLoaded", hideGreeter())
 /* This script controls the behaviour of the add task form.
 *
 */
+
+const listItems = []
+
+const listItem = {
+    taskname,
+    timestamp,
+    started,
+    deadline,
+    finished,
+    timer,
+    options
+}
 
 /* This script controls the behaviour of the task list elements and buttons.
 *
