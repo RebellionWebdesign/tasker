@@ -1,15 +1,14 @@
-/* This script controls the behaviour of the add button and the tasklist
+/* This script controls the behaviour of the add button
 *
 */
+const addButton = document.getElementById("addbutton")
+const closeButton = document.getElementById("closebutton")
+const form = document.getElementById("form")
 
-function revealForm() {
-    const addButton = document.getElementById("addbutton")
-    const show = document.getElementById("form").classList.remove("hide")
-    addButton.addEventListener("click", show)
-}
+addButton.addEventListener("click", () => {
+    form.classList.remove("hide")
+})
 
-function hideForm() {
-    const addButton = document.getElementById("addbutton")
-    const hide = document.getElementById("form").classList.add("hide")
-    addButton.addEventListener("click", hide)
-}
+closeButton.addEventListener("click", () => {
+    form.classList.add("hide")
+})
