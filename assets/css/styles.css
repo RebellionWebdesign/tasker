@@ -38,10 +38,7 @@ header {
     width: 100vw;
     height: 6vh;
     padding: 10px 277px;
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-color: var(--primary-color);
 }
 
 .header__container {
@@ -67,9 +64,9 @@ section {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 277px;
+    padding: 0px 277px;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 12vh);
     background-color: var(--primary-color);
 }
 
@@ -136,7 +133,9 @@ section {
     padding: 18px;
     margin-bottom: 10px;
     border-radius: 10px;
-    position: relative;
+    position: absolute;
+    bottom: 15%;
+    z-index: 99;
 }
 
 label {
@@ -182,6 +181,8 @@ input[type=submit]:hover {
     width: 100%;
 }
 
+/*CSS is automatically generated with 
+ https://www.theappguruz.com/tag-tools/web/CSSAnimations/*/
 .fadeInUp {
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
@@ -191,6 +192,8 @@ input[type=submit]:hover {
     animation-fill-mode: both;
     }
 
+/*CSS is automatically generated with 
+ https://www.theappguruz.com/tag-tools/web/CSSAnimations/*/
 .fadeOutDown {
     -webkit-animation-name: fadeOutDown;
     animation-name: fadeOutDown;
@@ -202,6 +205,7 @@ input[type=submit]:hover {
 
 #addbutton {
     width: 3.125rem;
+    padding-bottom: 1rem;
 }
 
 #closebutton {
@@ -215,11 +219,8 @@ input[type=submit]:hover {
 footer {
     width: 100vw;
     height: 6vh;
-    padding: 1px 277px;
-    background-color: transparent;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    padding: 0px 277px;
+    background-color: var(--primary-color);
 }
 
 .footer__container {
@@ -275,7 +276,8 @@ footer {
     display: none;
 }
 
-/* ANIMATION STYLES FOR THE TASK FORM */
+/* ANIMATION STYLES FOR THE TASK FORM - CSS is automatically generated with 
+ https://www.theappguruz.com/tag-tools/web/CSSAnimations/ */
 @-webkit-keyframes fadeInUp {
     0% {
     opacity: 0;
