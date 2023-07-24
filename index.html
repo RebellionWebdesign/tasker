@@ -23,7 +23,7 @@
     <main>
         <section>
             <div class="section__container">
-                <div class="container__tasklist__greeter">
+                <div class="container__tasklist__greeter hide">
                     <div class="container__tasklist__greeter--wrapper">
                         <img class="container__tasklist__symbol" src="assets/images/svg/clipboard-list-solid.svg" alt="a clipboard symbol">
                         <h1>HELLO THERE!</h1>
@@ -34,7 +34,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="container__tasklist hide">
+                <div class="container__tasklist">
                     <div class="container__tasklist__header">
                         <ul>
                             <li>TASKNAME</li>
@@ -46,9 +46,35 @@
                             <li>OPTIONS</li>
                         </ul>
                     </div>
+                    <div class="list-item">
+                        <ul>
+                            <li>Lorem Ipsum...</li>
+                            <li>20.06.2023 - 13:30</li>
+                            <li>21.06.2023 - 14:40</li>
+                            <li>06.08.2023 - 12:00</li>
+                            <li>NO</li>
+                            <li>25:00</li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        <img class="option-button" src="assets/images/svg/circle-play-solid.svg" alt="a play symbol">
+                                    </li>
+                                    <li>
+                                        <img class="option-button" src="assets/images/svg/circle-pause-solid.svg" alt="a pause symbol">
+                                    </li>
+                                    <li>
+                                        <img class="option-button" src="assets/images/svg/circle-stop-solid.svg" alt="a stop symbol">
+                                    </li>
+                                    <li>
+                                        <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="container__form">
-                    <form id="form" class="container__task_form fadeInUp hide ">
+                    <form id="form" class="container__task_form fadeInUp hide">
                         <label for="taskname">ENTER TASKNAME:</label>
                         <input type="text" id="taskname" name="taskname" required minlength="10" maxlength="30" size="35">
                         <label for="taskname">ENTER DEADLINE:</label>
