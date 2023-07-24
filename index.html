@@ -1,85 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tasker is an app that gets you productive in no time!">
-    <meta name="keywords" content="notes, take notes, task list, pomodoro, timer, focus, productivity">
-    <meta name="author" content="Daniel Stauffer">
-    <link rel="icon" type="image/x-icon" href="assets/images/svg/tasker-logo.svg">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="user-scalable=yes, width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Tasker is an app that gets you productive in no time!"
+    />
+    <meta
+      name="keywords"
+      content="notes, take notes, task list, pomodoro, timer, focus, productivity"
+    />
+    <meta name="author" content="Daniel Stauffer" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/svg/tasker-logo.svg"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
     <title>TASKER</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <div class="header__container">
-            <h1 class="header__container__logo">TASKER</h1>
-            <img class="header__container__symbol" src="assets/images/svg/tasker-logo.svg" alt="the tasker logo">
-        </div>
+      <div class="header__container">
+        <h1 class="header__container__logo">TASKER</h1>
+        <img
+          class="header__container__symbol"
+          src="assets/images/svg/tasker-logo.svg"
+          alt="the tasker logo"
+        />
+      </div>
     </header>
 
     <main>
-        <section>
-            <div class="section__container">
-                <div class="container__tasklist__greeter hide">
-                    <div class="container__tasklist__greeter--wrapper">
-                        <img class="container__tasklist__symbol" src="assets/images/svg/clipboard-list-solid.svg" alt="a clipboard symbol">
-                        <h1>HELLO THERE!</h1>
-                        <p>
-                            Seems like you haven´t added any Tasks yet.
-                            <br>
-                            Head down to the PLUS Icon and get productive!
-                        </p>
-                    </div>
-                </div>
-                <div class="container__tasklist">
-                    <div class="container__tasklist__header">
-                        <ul>
-                            <li>TASKNAME</li>
-                            <li>TIMESTAMP</li>
-                            <li>STARTED</li>
-                            <li>DEADLINE</li>
-                            <li>FINISHED</li>
-                            <li>TIMER</li>
-                            <li>OPTIONS</li>
-                        </ul>
-                    </div>
-                    <div class="list-item">
-                        <ul>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="container__form">
-                    <form id="form" class="container__task_form fadeInUp hide">
-                        <label for="taskname">ENTER TASKNAME:</label>
-                        <input type="text" id="taskname" name="taskname" required minlength="10" maxlength="30" size="35">
-                        <label for="taskname">ENTER DEADLINE:</label>
-                        <input type="datetime-local" id="datetime" name="datetime">
-                        <input type="submit" value="ADD TASK">
-                        <img id="closebutton" src="assets/images/svg/circle-plus-solid.svg" alt="the close task form button">
-                    </form>
-                    <img id="addbutton" src="assets/images/svg/circle-plus-solid.svg" alt="the open task form button">
-                </div>
+      <section>
+        <div class="section__container">
+          <div id="tasklist-container" class="container__tasklist">
+            <div class="container__tasklist__header">
+              <ul>
+                <li>TASKNAME</li>
+                <li>TIMESTAMP</li>
+                <li>STARTED</li>
+                <li>DEADLINE</li>
+                <li>FINISHED</li>
+                <li>TIMER</li>
+                <li>OPTIONS</li>
+              </ul>
             </div>
-        </section>
+            <div class="list-item">
+              <ul id="todo-container"></ul>
+            </div>
+          </div>
+          <div class="container__tasklist__greeter">
+            <div class="container__tasklist__greeter--wrapper">
+              <img
+                class="container__tasklist__symbol"
+                src="assets/images/svg/clipboard-list-solid.svg"
+                alt="a clipboard symbol"
+              />
+              <h1>HELLO THERE!</h1>
+              <p>
+                Seems like you haven´t added any Tasks yet.
+                <br />
+                Head down to the PLUS Icon and get productive!
+              </p>
+            </div>
+          </div>
+          <div class="container__form">
+            <form id="form" class="container__task_form fadeInUp hide">
+              <label for="taskname">ENTER TASKNAME:</label>
+              <input
+                type="text"
+                id="taskname"
+                name="taskname"
+                required
+                minlength="10"
+                maxlength="30"
+                size="35"
+              />
+              <label for="taskname">ENTER DEADLINE:</label>
+              <input type="datetime-local" id="datetime" name="datetime" />
+              <input type="submit" value="ADD TASK" />
+              <img
+                id="closebutton"
+                src="assets/images/svg/circle-plus-solid.svg"
+                alt="the close task form button"
+              />
+            </form>
+            <img
+              id="addbutton"
+              src="assets/images/svg/circle-plus-solid.svg"
+              alt="the open task form button"
+            />
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer__container">
-            <div class="container__date-wrapper">
-                <div id="day" class="footer__container__day"></div>
-                <div id="date" class="footer__container__date"></div>
-            </div>
-            <div class="container__time-wrapper">
-                <div id="time" class="footer__container__time"></div>
-                <div id="daytime" class="footer__container__daytime"></div>
-            </div>
+      <div class="footer__container">
+        <div class="container__date-wrapper">
+          <div id="day" class="footer__container__day"></div>
+          <div id="date" class="footer__container__date"></div>
         </div>
+        <div class="container__time-wrapper">
+          <div id="time" class="footer__container__time"></div>
+          <div id="daytime" class="footer__container__daytime"></div>
+        </div>
+      </div>
     </footer>
 
     <script type="text/javascript" src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>
