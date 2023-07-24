@@ -1,4 +1,4 @@
-/* This script controls the behaviour og the add button and the tasklist
+/* This script controls the behaviour of the add button and the tasklist
 *
 */
 
@@ -13,4 +13,3 @@ function hideForm() {
     const hide = document.getElementById("form").classList.add("hide")
     addButton.addEventListener("click", hide)
 }
-
