@@ -14,6 +14,8 @@ You can visit the live website here.
 
 ## OTHER TOOLS
 
+- The entry and exit animations on the form container triggered by the plus icon were generated with [CSS Animations Generator](https://www.theappguruz.com/tag-tools/web/CSSAnimations/)
+
 ## TESTING
 
 ## DEPLOYMENT
