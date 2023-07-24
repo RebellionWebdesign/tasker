@@ -1,4 +1,4 @@
-/* This script controls the behaviour of the add button
+/* This script controls the behaviour of the add and close buttons
 *
 */
 const addButton = document.getElementById("addbutton")
