@@ -2,7 +2,6 @@
 *
 *
 */
-
 const currentDay = new Date();
 let hours = currentDay.getHours();
 let minutes = currentDay.getMinutes();
@@ -10,7 +9,7 @@ let seconds = currentDay.getSeconds();
 let dayTime = document.getElementById("daytime");
 let clock = document.getElementById("time");
 
-function clock() {
+function time() {
     hours = addZero(hours);
     minutes = addZero(minutes);
     seconds = addZero(seconds);
@@ -31,3 +30,6 @@ function addZero(i) {
     };
     return i;
 }
+
+document.addEventListener("DOMContentLoaded", time())
+document.addEventListener("DOMContentLoaded", addZero())
