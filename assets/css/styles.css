@@ -136,6 +136,7 @@ section {
     padding: 18px;
     margin-bottom: 10px;
     border-radius: 10px;
+    position: relative;
 }
 
 label {
@@ -173,7 +174,7 @@ input[type=submit]:hover {
     background-color: var(--pri-hover-color);
 }
 
-.container__addbutton {
+.container__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,6 +184,14 @@ input[type=submit]:hover {
 
 #addbutton {
     width: 3.125rem;
+}
+
+#closebutton {
+    width: 1.56rem;
+    position: absolute;
+    top: -1.12rem;
+    right: -1.52rem;
+    transform: rotate(45deg);
 }
 
 footer {
