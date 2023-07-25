@@ -14,7 +14,7 @@
 *  doesnt work as intended because the innerHTML is injected before the elents holding the text are even     *  parsed.
 */
 
-const day = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+const day = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
 const newDay = new Date();
 let dayOfWeek = day[newDay.getDay()];
 let currentDate = new Date().toLocaleDateString("de-DE");
@@ -50,6 +50,8 @@ function addZero(i) {
     return i;
 }
 
+
+
 function time() {
     const currentDay = new Date();
     let hours = currentDay.getHours();
@@ -60,7 +62,7 @@ function time() {
     hours = addZero(hours);
     minutes = addZero(minutes);
     seconds = addZero(seconds);
-    
+
 
     if (hours < 12) {
         dayTime.innerHTML = "AM"
@@ -69,7 +71,7 @@ function time() {
     }
 
     clock.innerText = hours + ":" + minutes;
-    setTimeout(function() {time()}, 1000)
+    setTimeout(function () { time() }, 1000)
 }
 
 document.addEventListener("DOMContentLoaded", time())
@@ -92,11 +94,11 @@ closeButton.addEventListener("click", () => {
 /* This function hides the greeter text when the tasklist is empty.
 *
 */
+const emptyList = document.getElementById("list-item").innerHTML.trim()
+const taskListHeader = document.getElementById("tasklist-container")
+const toDoList = document.getElementById("list-item")
 
 function hideGreeter() {
-    let emptyList = document.getElementById("todo-container").innerHTML.trim()
-    let taskListHeader = document.getElementById("tasklist-container")
-    let toDoList = document.getElementById("todo-container")
 
     if (emptyList == "") {
         taskListHeader.classList.add("hide")
@@ -105,26 +107,97 @@ function hideGreeter() {
         taskListHeader.classList.remove("hide")
         toDoList.classList.remove("hide")
     }
-}
 
-document.addEventListener("DOMContentLoaded", hideGreeter())
+document.addEventListener("DOMContentLoaded", hideGreeter())}
 
-/* This script controls the behaviour of the add task form.
+/* This script controls the data passed from the add task form to the list array.
 *
 */
 
-const listItems = []
+document.addEventListener("submit", event => {
+    event.preventDefault();
+    
+    const listItems = [];
+    const newDate = new Date();
+    const timeStamp = newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
+    const dateStamp = newDate.getDay() + "." + newDate.getMonth() + "." + newDate.getFullYear();
+    const taskName = document.getElementById("taskname").value.trim()
+    const listContainer = document.getElementById("list-item")
+    const listElement = document.createElement("ul")
+    listElement.setAttribute("class", "todo-container")
 
-const listItem = {
-    taskname,
-    timestamp,
-    started,
-    deadline,
-    finished,
-    timer,
-    options
+    const listItem = {
+        taskname: taskName,
+        timestamp: dateStamp + " - " + timeStamp,
+        //started,
+        deadline: document.getElementById("datetime").value.trim(),
+        finished: "NO",
+    }
+
+    listItems.push(listItem);
+    form.reset();
+
+
+    listElement.innerHTML = `
+    <li>${listItem.taskname}</li>
+    <li>${listItem.timestamp}</li>
+    <li>CODE IS MISSING</li>
+    <li>${listItem.deadline}</li>
+    <li>${listItem.finished}</li>
+    <li>CODE IS MISSING</li>
+    <li>
+      <ul>
+        <li>
+          <img class="option-button" src="assets/images/svg/circle-play-solid.svg" alt="a play symbol">
+        </li>
+        <li>
+          <img class="option-button" src="assets/images/svg/circle-pause-solid.svg" alt="a pause symbol">
+        </li>
+        <li>
+          <img class="option-button" src="assets/images/svg/circle-stop-solid.svg" alt="a stop symbol">
+        </li>
+        <li>
+          <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
+        </li>
+      </ul>
+    </li>`
+
+    listContainer.append(listElement)
+
+})
+
+    /* This renders the listItems array 
+    *
+    */
+
+     function displayTasks() {
+        const listContainer = document.getElementById("list-item")
+        const listElement = document.createElement("ul")
+        listElement.setAttribute("id", "todo-container")
+
+        listElement.innerHTML = `
+    <li>${listItem.taskname}</li>
+    <li>${listItem.timestamp}</li>
+    <li>CODE IS MISSING</li>
+    <li>${listItem.deadline}</li>
+    <li>${listItem.finished}</li>
+    <li>CODE IS MISSING</li>
+    <li>
+      <ul>
+        <li>
+          <img class="option-button" src="assets/images/svg/circle-play-solid.svg" alt="a play symbol">
+        </li>
+        <li>
+          <img class="option-button" src="assets/images/svg/circle-pause-solid.svg" alt="a pause symbol">
+        </li>
+        <li>
+          <img class="option-button" src="assets/images/svg/circle-stop-solid.svg" alt="a stop symbol">
+        </li>
+        <li>
+          <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
+        </li>
+      </ul>
+    </li>`
+
+    listContainer.append(listElement)
 }
-
-/* This script controls the behaviour of the task list elements and buttons.
-*
-*/
