@@ -165,39 +165,3 @@ document.addEventListener("submit", event => {
     listContainer.append(listElement)
 
 })
-
-    /* This renders the listItems array 
-    *
-    */
-
-     function displayTasks() {
-        const listContainer = document.getElementById("list-item")
-        const listElement = document.createElement("ul")
-        listElement.setAttribute("id", "todo-container")
-
-        listElement.innerHTML = `
-    <li>${listItem.taskname}</li>
-    <li>${listItem.timestamp}</li>
-    <li>CODE IS MISSING</li>
-    <li>${listItem.deadline}</li>
-    <li>${listItem.finished}</li>
-    <li>CODE IS MISSING</li>
-    <li>
-      <ul>
-        <li>
-          <img class="option-button" src="assets/images/svg/circle-play-solid.svg" alt="a play symbol">
-        </li>
-        <li>
-          <img class="option-button" src="assets/images/svg/circle-pause-solid.svg" alt="a pause symbol">
-        </li>
-        <li>
-          <img class="option-button" src="assets/images/svg/circle-stop-solid.svg" alt="a stop symbol">
-        </li>
-        <li>
-          <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
-        </li>
-      </ul>
-    </li>`
-
-    listContainer.append(listElement)
-}
