@@ -83,6 +83,12 @@ section {
     height: 100%;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
 .container__tasklist__greeter {
     display: grid;
     place-items: center;
