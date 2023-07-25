@@ -100,7 +100,7 @@ section {
     margin-bottom: 20px;
 }
 
-.list-item {
+#list-item {
     width: 100%;
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -109,29 +109,16 @@ section {
     text-align: left;
 }
 
-.list-item > ul {
-    list-style-type: none;
+.todo-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 100%;
+    padding: 10px 50px;
 }
 
-.list-item > ul > li:nth-child(2) {
-    margin-left: 10px; 
-}
-
-.list-item > ul > li:nth-child(3) {
-    margin-left: -60px; 
-}
-
-.list-item > ul > li:nth-child(4) {
-    margin-left: -10px; 
-}
-
-.list-item ul > li ul > li {
+ul > li {
     display: inline-block;
     list-style-type: none;
     padding: 0;
