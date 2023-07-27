@@ -29,49 +29,22 @@
   <main>
     <section>
       <div class="section__container">
-        <div id="tasklist-container" class="container__tasklist">
-          <div class="container__tasklist__header">
-            <ul>
-              <li>TASKNAME</li>
-              <li>TIMESTAMP</li>
-              <li>STARTED</li>
-              <li>DEADLINE</li>
-              <li>FINISHED</li>
-              <li>TIMER</li>
-              <li>OPTIONS</li>
-            </ul>
+        <div id="list-item"></div>
+          <div class="container__form">
+            <form id="form" class="container__task_form fadeInUp hide">
+              <label for="taskname">ENTER TASKNAME:</label>
+              <input type="text" id="taskname" name="taskname" required
+                minlength="5" maxlength="30" size="35" />
+              <label for="taskname">ENTER DEADLINE:</label>
+              <input type="datetime-local" id="datetime" name="datetime" />
+              <input type="submit" value="ADD TASK" />
+              <img id="closebutton" src="assets/images/svg/circle-plus-solid.svg"
+                alt="the close task form button" />
+            </form>
+            <button><img id="addbutton"
+                src="assets/images/svg/circle-plus-solid.svg"
+                alt="the open task form button" /></button>
           </div>
-          <div id="list-item">
-
-          </div>
-        </div>
-        <div class="container__tasklist__greeter">
-          <div class="container__tasklist__greeter--wrapper">
-            <img class="container__tasklist__symbol"
-              src="assets/images/svg/clipboard-list-solid.svg"
-              alt="a clipboard symbol" />
-            <h1>HELLO THERE!</h1>
-            <p>
-              Seems like you haven´t added any Tasks yet.
-              <br />
-              Head down to the PLUS Icon and get productive!
-            </p>
-          </div>
-        </div>
-        <div class="container__form">
-          <form id="form" class="container__task_form fadeInUp hide">
-            <label for="taskname">ENTER TASKNAME:</label>
-            <input type="text" id="taskname" name="taskname" required
-              minlength="5" maxlength="30" size="35" />
-            <label for="taskname">ENTER DEADLINE:</label>
-            <input type="datetime-local" id="datetime" name="datetime" />
-            <input type="submit" value="ADD TASK" />
-            <img id="closebutton" src="assets/images/svg/circle-plus-solid.svg"
-              alt="the close task form button" />
-          </form>
-          <button><img id="addbutton" src="assets/images/svg/circle-plus-solid.svg"
-            alt="the open task form button" /></button>
-        </div>
       </div>
     </section>
   </main>
