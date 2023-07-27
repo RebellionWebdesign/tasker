@@ -90,30 +90,6 @@ closeButton.addEventListener("click", () => {
     form.classList.add("hide")
 })
 
-/* This function hides the greeter text when the tasklist is empty.
-*
-*/
-const emptyList = document.getElementById("list-item").innerHTML.trim()
-const taskListHeader = document.getElementById("tasklist-container")
-const toDoList = document.getElementById("list-item")
-
-function hideGreeter() {
-
-    if (emptyList == "") {
-        taskListHeader.classList.add("hide")
-        toDoList.classList.add("hide")
-    } else {
-        taskListHeader.classList.remove("hide")
-        toDoList.classList.remove("hide")
-    }
-
-    document.addEventListener("DOMContentLoaded", hideGreeter())
-}
-
-/* This script controls the data passed from the add task form to the list array.
-*
-*/
-
 /* This script controls the data passed from the add task form to the list array.
 *
 */
@@ -135,7 +111,7 @@ document.addEventListener("submit", event => {
         timestamp: dateStamp + " - " + timeStamp,
         //started,
         deadline: document.getElementById("datetime").value.trim(),
-        finished: "NO",
+        finished: "",
     }
 
     listItems.push(listItem);
@@ -146,10 +122,8 @@ document.addEventListener("submit", event => {
     <ul class="todo-container">
       <li>${listItem.taskname}</li>
       <li>${listItem.timestamp}</li>
-      <li>CODE IS MISSING</li>
       <li>${listItem.deadline}</li>
       <li>${listItem.finished}</li>
-      <li>CODE IS MISSING</li>
       <li>
         <ul>
           <li>
