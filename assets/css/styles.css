@@ -130,6 +130,10 @@ ul > li {
     padding: 0;
 }
 
+.todo-container > li {
+    width: 150px;
+}
+
 .option-button {
     width: 1.5rem;
     height: 1.5rem;
