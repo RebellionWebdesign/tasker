@@ -109,7 +109,6 @@ document.addEventListener("submit", event => {
     const listItem = {
         taskname: taskName,
         timestamp: dateStamp + " - " + timeStamp,
-        //started,
         deadline: document.getElementById("datetime").value.trim(),
         finished: "",
     }
@@ -128,16 +127,6 @@ document.addEventListener("submit", event => {
         <ul>
           <li>
             <button>
-              <img id="play" class="option-button" src="assets/images/svg/circle-play-solid.svg" alt="a play symbol">
-            </button>
-          </li>
-          <li>
-            <button>
-              <img id="pause" class="option-button" src="assets/images/svg/circle-pause-solid.svg" alt="a pause symbol">
-            </button>
-          </li>
-          <li>
-            <button>
               <img id="stop" class="option-button" src="assets/images/svg/circle-stop-solid.svg" alt="a stop symbol">
             </button>
           </li>
@@ -151,5 +140,6 @@ document.addEventListener("submit", event => {
     </ul>`
 
     listContainer.append(listElement)
+    console.log(listItem)
 
 })
