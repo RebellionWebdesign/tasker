@@ -22,6 +22,7 @@ let currentDate = new Date().toLocaleDateString("de-DE");
 function date() {
     document.getElementById("day").innerHTML = dayOfWeek;
     document.getElementById("date").innerHTML = currentDate;
+    setTimeout(function () { date() }, 1000)
 }
 
 document.addEventListener("DOMContentLoaded", date())
