@@ -1,4 +1,4 @@
-![readme header image](https://github.com/RebellionWebdesign/tasker/blob/6de4f475d0eae8cda3701c2859bdd4c937c1cd47/assets/images/readme-images/tasker-readme-header-image.png)
+![readme header image](https://github.com/RebellionWebdesign/tasker/blob/e856f5a8a0bd8d17b1e723d9bdc56770bf0817bb/docs/readme-images/tasker-readme-header-image.png)
 
 TASKER is a productivity app which aims to provide a means of making a to-do list. You can visit the live website here.
 
