@@ -93,3 +93,63 @@ closeButton.addEventListener("click", () => {
 /* This script controls the data passed from the add task form to the list array.
 *
 */
+
+document.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const listItems = [];
+    const newDate = new Date();
+    const timeStamp = newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
+    const dateStamp = newDate.getDay() + "." + newDate.getMonth() + "." + newDate.getFullYear();
+    const taskName = document.getElementById("taskname").value.trim()
+    const listContainer = document.getElementById("list-item")
+    const listElement = document.createElement("div")
+    listElement.setAttribute("class", "todo-container--wrapper")
+
+    const listItem = {
+        taskname: taskName,
+        timestamp: dateStamp + " - " + timeStamp,
+        //started,
+        deadline: document.getElementById("datetime").value.trim(),
+        finished: "",
+    }
+
+    listItems.push(listItem);
+    form.reset();
+
+
+    listElement.innerHTML = `
+    <ul class="todo-container">
+      <li>${listItem.taskname}</li>
+      <li>${listItem.timestamp}</li>
+      <li>${listItem.deadline}</li>
+      <li>${listItem.finished}</li>
+      <li>
+        <ul>
+          <li>
+            <button>
+              <img id="play" class="option-button" src="assets/images/svg/circle-play-solid.svg" alt="a play symbol">
+            </button>
+          </li>
+          <li>
+            <button>
+              <img id="pause" class="option-button" src="assets/images/svg/circle-pause-solid.svg" alt="a pause symbol">
+            </button>
+          </li>
+          <li>
+            <button>
+              <img id="stop" class="option-button" src="assets/images/svg/circle-stop-solid.svg" alt="a stop symbol">
+            </button>
+          </li>
+          <li>
+            <button>
+              <img id="delete" class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
+            </button>
+          </li>
+        </ul>
+      </li>
+    </ul>`
+
+    listContainer.append(listElement)
+
+})
