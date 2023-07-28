@@ -127,18 +127,9 @@ document.addEventListener("submit", event => {
       <li>
         <ul>
           <li>
-            <button>
-              <img id="play" class="option-button" src="assets/images/svg/circle-play-solid.svg" alt="a play symbol">
-            </button>
-          </li>
           <li>
             <button>
-              <img id="pause" class="option-button" src="assets/images/svg/circle-pause-solid.svg" alt="a pause symbol">
-            </button>
-          </li>
-          <li>
-            <button>
-              <img id="stop" class="option-button" src="assets/images/svg/circle-stop-solid.svg" alt="a stop symbol">
+              <img id="stop" class="option-button" src="assets/images/svg/check-circle-solid.svg" alt="a stop symbol">
             </button>
           </li>
           <li>
