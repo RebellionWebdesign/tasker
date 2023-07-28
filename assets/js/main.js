@@ -93,11 +93,12 @@ closeButton.addEventListener("click", () => {
 /* This script controls the data passed from the add task form to the list array.
 *
 */
-
+const listItems = [];
 document.addEventListener("submit", event => {
     event.preventDefault();
 
-    const listItems = [];
+    
+
     const newDate = new Date();
     const timeStamp = newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
     const dateStamp = newDate.getDay() + "." + newDate.getMonth() + "." + newDate.getFullYear();
@@ -106,13 +107,7 @@ document.addEventListener("submit", event => {
     const listElement = document.createElement("div")
     listElement.setAttribute("class", "todo-container--wrapper")
 
-    const listItem = {
-        taskname: taskName,
-        timestamp: dateStamp + " - " + timeStamp,
-        //started,
-        deadline: document.getElementById("datetime").value.trim(),
-        finished: "",
-    }
+    
 
     listItems.push(listItem);
     form.reset();
@@ -143,4 +138,17 @@ document.addEventListener("submit", event => {
 
     listContainer.append(listElement)
 
+    
+
 })
+
+function test(taskName, timeStamp, deadLine, finished) {
+      const listItem = {
+        taskname: taskName,
+        timestamp: dateStamp + " - " + timeStamp,
+        //started,
+        deadline: document.getElementById("datetime").value.trim(),
+        finished: "",
+    }
+    return listItem
+    }
