@@ -1,4 +1,26 @@
+//Global Variables for date display
+const day = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+const currentDay = new Date();
+let dayOfWeek = day[currentDay.getDay()];
+let currentDate = currentDay.toLocaleDateString("de-DE");
 
+//Global vriables for form, form reveal and form hide button
+const addButton = document.getElementById("addbutton")
+const closeButton = document.getElementById("closebutton")
+const form = document.getElementById("form")
+
+//Global variables for array generation
+let listItems = [];
+let taskName = document.getElementById("taskname");
+let deadLine = document.getElementById("date");
+
+//Object which holds task data
+let listItem = {
+  taskname: "",
+  timestamp: currentDate + "-" + currentDay.getHours() + ":" + currentDay.getMinutes() + ":" + currentDay.getSeconds(),
+  deadline: "",
+  finished: "NO",
+}
 
 /* This part of main.js displays the day of the week and the current date on the left ide of the footer.
 *  The exlanations is top to bottom:
@@ -14,18 +36,11 @@
 *  doesnt work as intended because the innerHTML is injected before the elents holding the text are even     *  parsed.
 */
 
-const day = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
-const newDay = new Date();
-let dayOfWeek = day[newDay.getDay()];
-let currentDate = new Date().toLocaleDateString("de-DE");
-
 function date() {
     document.getElementById("day").innerHTML = dayOfWeek;
-    document.getElementById("date").innerHTML = currentDate;
+    document.getElementById("today").innerHTML = currentDate;
     setTimeout(function () { date() }, 1000)
 }
-
-document.addEventListener("DOMContentLoaded", date())
 
 /* We also would like to display the current time in 24h format (still adding AM and PM).
 *  Explanation is from top to bottom:
@@ -52,10 +67,10 @@ function addZero(i) {
 }
 
 function time() {
-    const currentDay = new Date();
-    let hours = currentDay.getHours();
-    let minutes = currentDay.getMinutes();
-    let seconds = currentDay.getSeconds();
+    const newDay = new Date();
+    let hours = newDay.getHours();
+    let minutes = newDay.getMinutes();
+    let seconds = newDay.getSeconds();
     let dayTime = document.getElementById("daytime");
     let clock = document.getElementById("time");
     hours = addZero(hours);
@@ -73,72 +88,88 @@ function time() {
     setTimeout(function () { time() }, 1000)
 }
 
-document.addEventListener("DOMContentLoaded", time())
-
 /* This script controls the behaviour of the add and close buttons.
 *
 */
-const addButton = document.getElementById("addbutton")
-const closeButton = document.getElementById("closebutton")
-const form = document.getElementById("form")
-
 addButton.addEventListener("click", () => {
     form.classList.remove("hide")
+    taskName.value.trim()
+    taskName.focus()
 })
 
 closeButton.addEventListener("click", () => {
     form.classList.add("hide")
 })
 
+//Render the todo list
+function renderListItems(listItem) {
+  const listContainer = document.getElementById("list-item")
+  const listElement = document.createElement("ul")
+  listElement.setAttribute("class", "todo-container")
+
+  listElement.innerHTML = `
+    <li>${listItem.taskname}</li>
+    <li>${listItem.timestamp}</li>
+    <li>${listItem.deadline}</li>
+    <li>${listItem.finished}</li>
+    <li>
+      <ul>
+        <li>
+        <li>
+          <button id="finish">
+            <img class="option-button" src="assets/images/svg/check-circle-solid.svg" alt="a finish symbol">
+          </button>
+        </li>
+        <li>
+          <button id="delete">
+            <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
+          </button>
+        </li>
+      </ul>
+    </li>`
+
+  listContainer.append(listElement)
+
+}
+
+//This function reads the local storage and restores previous tasks
+//function getStoredItems() {
+//  const reference = localStorage.getItem("tasksRef")
+//  while (reference < reference.length) {
+//    listItems = JSON.parse(reference)
+//    listItems.forEach(t => {
+//      renderListItems(t)
+//    });
+//}}
+
+//This part starts all of the scripts that should be started at document load
+document.addEventListener("DOMContentLoaded", () => {
+  date()
+  time()
+  //getStoredItems()
+})
+
 /* This script controls the data passed from the add task form to the list array.
 *
 */
-const listItems = [];
-document.addEventListener("submit", event => {
-    event.preventDefault();
 
-    
+form.addEventListener("submit", event => {
+  event.preventDefault();
 
-    const newDate = new Date();
-    const timeStamp = newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
-    const dateStamp = newDate.getDay() + "." + newDate.getMonth() + "." + newDate.getFullYear();
-    const taskName = document.getElementById("taskname").value.trim()
-    const listContainer = document.getElementById("list-item")
-    const listElement = document.createElement("ul")
-    listElement.setAttribute("class", "todo-container")
+  listItem.taskname = taskName.value.trim()
+  listItem.deadline = deadLine.value.trim()
+  listItems.push(listItem)
 
-    const listItem = {
-            taskname: taskName,
-            timestamp: dateStamp + " - " + timeStamp,
-            //started,
-            deadline: document.getElementById("datetime").value.trim(),
-            finished: "",
-        }
+  renderListItems(listItem);
+  //localStorage.setItem("tasksRef", JSON.stringify(listItems))
 
-    listItems.push(listItem);
-    form.reset();
+  form.reset()
+  taskName.value.trim()
+  taskName.focus()
 
-    listElement.innerHTML = `
-      <li>${listItem.taskname}</li>
-      <li>${listItem.timestamp}</li>
-      <li>${listItem.deadline}</li>
-      <li>${listItem.finished}</li>
-      <li>
-        <ul>
-          <li>
-          <li>
-            <button>
-              <img id="stop" class="option-button" src="assets/images/svg/check-circle-solid.svg" alt="a stop symbol">
-            </button>
-          </li>
-          <li>
-            <button>
-              <img id="delete" class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
-            </button>
-          </li>
-        </ul>
-      </li>`
-
-    listContainer.append(listElement)
-
+  console.log(listItem.taskname)
+  console.log(listItem.deadline)
+  console.log(listItem.timestamp)
+  console.log(listItem.finished)
+  console.log(listItem)
 })
