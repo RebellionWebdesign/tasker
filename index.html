@@ -35,7 +35,7 @@
               <input type="text" id="taskname" name="taskname" required
                 minlength="5" maxlength="30" size="35" />
               <label for="taskname">ENTER DEADLINE:</label>
-              <input type="date" id="date" name="date" required/>
+              <input type="date" id="date" name="date" min="2023-07-29" required/>
               <input type="submit" value="ADD TASK" />
               <img id="closebutton" src="assets/images/svg/circle-plus-solid.svg"
                 alt="the close task form button" />
@@ -51,7 +51,7 @@
     <div class="footer__container">
       <div class="container__date-wrapper">
         <div id="day" class="footer__container__day"></div>
-        <div id="date" class="footer__container__date"></div>
+        <div id="today" class="footer__container__date"></div>
       </div>
       <div class="container__time-wrapper">
         <div id="time" class="footer__container__time"></div>
