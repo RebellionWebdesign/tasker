@@ -104,17 +104,21 @@ document.addEventListener("submit", event => {
     const dateStamp = newDate.getDay() + "." + newDate.getMonth() + "." + newDate.getFullYear();
     const taskName = document.getElementById("taskname").value.trim()
     const listContainer = document.getElementById("list-item")
-    const listElement = document.createElement("div")
-    listElement.setAttribute("class", "todo-container--wrapper")
+    const listElement = document.createElement("ul")
+    listElement.setAttribute("class", "todo-container")
 
-    
+    const listItem = {
+            taskname: taskName,
+            timestamp: dateStamp + " - " + timeStamp,
+            //started,
+            deadline: document.getElementById("datetime").value.trim(),
+            finished: "",
+        }
 
     listItems.push(listItem);
     form.reset();
 
-
     listElement.innerHTML = `
-    <ul class="todo-container">
       <li>${listItem.taskname}</li>
       <li>${listItem.timestamp}</li>
       <li>${listItem.deadline}</li>
@@ -133,22 +137,8 @@ document.addEventListener("submit", event => {
             </button>
           </li>
         </ul>
-      </li>
-    </ul>`
+      </li>`
 
     listContainer.append(listElement)
 
-    
-
 })
-
-function test(taskName, timeStamp, deadLine, finished) {
-      const listItem = {
-        taskname: taskName,
-        timestamp: dateStamp + " - " + timeStamp,
-        //started,
-        deadline: document.getElementById("datetime").value.trim(),
-        finished: "",
-    }
-    return listItem
-    }
