@@ -16,8 +16,9 @@ let deadLine = document.getElementById("date");
 
 //Object which holds task data
 let listItem = {
+  id: "",
   taskname: "",
-  timestamp: currentDate + "-" + currentDay.getHours() + ":" + currentDay.getMinutes() + ":" + currentDay.getSeconds(),
+  timestamp: "",
   deadline: "",
   finished: "NO",
 }
@@ -37,9 +38,9 @@ let listItem = {
 */
 
 function date() {
-    document.getElementById("day").innerHTML = dayOfWeek;
-    document.getElementById("today").innerHTML = currentDate;
-    setTimeout(function () { date() }, 1000)
+  document.getElementById("day").innerHTML = dayOfWeek;
+  document.getElementById("today").innerHTML = currentDate;
+  setTimeout(function () { date() }, 1000)
 }
 
 /* We also would like to display the current time in 24h format (still adding AM and PM).
@@ -60,46 +61,77 @@ function date() {
 */
 
 function addZero(i) {
-    if (i < 10) {
-        i = "0" + i
-    };
-    return i;
+  if (i < 10) {
+    i = "0" + i
+  };
+  return i;
 }
 
 function time() {
-    const newDay = new Date();
-    let hours = newDay.getHours();
-    let minutes = newDay.getMinutes();
-    let seconds = newDay.getSeconds();
-    let dayTime = document.getElementById("daytime");
-    let clock = document.getElementById("time");
-    hours = addZero(hours);
-    minutes = addZero(minutes);
-    seconds = addZero(seconds);
+  const newDay = new Date();
+  let hours = newDay.getHours();
+  let minutes = newDay.getMinutes();
+  let seconds = newDay.getSeconds();
+  let dayTime = document.getElementById("daytime");
+  let clock = document.getElementById("time");
+  hours = addZero(hours);
+  minutes = addZero(minutes);
+  seconds = addZero(seconds);
+  
 
+  if (hours < 12) {
+    dayTime.innerHTML = "AM"
+  } else {
+    dayTime.innerHTML = "PM"
+  }
 
-    if (hours < 12) {
-        dayTime.innerHTML = "AM"
-    } else {
-        dayTime.innerHTML = "PM"
-    }
+  clock.innerText = hours + ":" + minutes;
+  setTimeout(function () { time() }, 1000)
+}
 
-    clock.innerText = hours + ":" + minutes;
-    setTimeout(function () { time() }, 1000)
+function timeStamp(timeStamp) {
+  const newDay = new Date();
+  let hours = newDay.getHours();
+  let minutes = newDay.getMinutes();
+  let seconds = newDay.getSeconds();
+  hours = addZero(hours);
+  minutes = addZero(minutes);
+  seconds = addZero(seconds);
+  
+  return timeStamp = hours + ":" + minutes + ":" +  seconds
 }
 
 /* This script controls the behaviour of the add and close buttons.
 *
 */
 addButton.addEventListener("click", () => {
-    form.classList.remove("hide")
-    taskName.value.trim()
-    taskName.focus()
+  form.classList.remove("hide")
+  addButton.classList.add("hide")
+  taskName.value.trim()
+  taskName.focus()
 })
 
 closeButton.addEventListener("click", () => {
-    form.classList.add("hide")
+  form.classList.add("hide")
+  addButton.classList.remove("hide")
 })
+
+//Stores the listItems array as string in local storage
+//function storeItems() {
+//
+//  listItems.forEach(localStorage.setItem("tasks", JSON.stringify(listItems))) 
+//    
+//}
+
+//This function reads the local storage and restores previous tasks
+//function getStoredItems() {
+//  const reference = localStorage.getItem("tasks")
+//  if (reference) {
+//    listItems = JSON.parse(reference)
+//    listItems.forEach(t => {
+//      renderListItems(t)
+//    });
+//}}
 
 //Render the todo list
 function renderListItems(listItem) {
@@ -108,13 +140,12 @@ function renderListItems(listItem) {
   listElement.setAttribute("class", "todo-container")
 
   listElement.innerHTML = `
-    <li>${listItem.taskname}</li>
-    <li>${listItem.timestamp}</li>
-    <li>${listItem.deadline}</li>
-    <li>${listItem.finished}</li>
+    <li id="task">${listItem.taskname}</li>
+    <li id="generated">${listItem.timestamp}</li>
+    <li id="deadline">${listItem.deadline}</li>
+    <li id="finished">${listItem.finished}</li>
     <li>
       <ul>
-        <li>
         <li>
           <button id="finish">
             <img class="option-button" src="assets/images/svg/check-circle-solid.svg" alt="a finish symbol">
@@ -132,16 +163,6 @@ function renderListItems(listItem) {
 
 }
 
-//This function reads the local storage and restores previous tasks
-//function getStoredItems() {
-//  const reference = localStorage.getItem("tasksRef")
-//  while (reference < reference.length) {
-//    listItems = JSON.parse(reference)
-//    listItems.forEach(t => {
-//      renderListItems(t)
-//    });
-//}}
-
 //This part starts all of the scripts that should be started at document load
 document.addEventListener("DOMContentLoaded", () => {
   date()
@@ -157,19 +178,26 @@ form.addEventListener("submit", event => {
   event.preventDefault();
 
   listItem.taskname = taskName.value.trim()
+  listItem.timestamp = currentDate + "-" + timeStamp(timeStamp)
   listItem.deadline = deadLine.value.trim()
   listItems.push(listItem)
 
   renderListItems(listItem);
-  //localStorage.setItem("tasksRef", JSON.stringify(listItems))
 
   form.reset()
   taskName.value.trim()
   taskName.focus()
+  //storeItems(listItems)
 
+  console.log(listItem.id)
   console.log(listItem.taskname)
   console.log(listItem.deadline)
   console.log(listItem.timestamp)
   console.log(listItem.finished)
   console.log(listItem)
 })
+
+// Sets the ID of the task list element to the index inside of the array
+
+
+//If the checkmark is clicked the "NO" in the status column changes to "YES"
