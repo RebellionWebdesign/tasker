@@ -194,7 +194,7 @@ input[type=text] {
 }
 
 
-input[type=datetime-local] {
+input[type=date] {
     padding: 8px;
     border-radius: 5px;
     border: none;
