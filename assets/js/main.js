@@ -164,8 +164,15 @@ form.addEventListener("submit", event => {
   listItem.taskname = taskName.value.trim()
   listItem.timestamp = currentDate + "-" + timeStamp(timeStamp)
   listItem.deadline = deadLine.value.trim()
-  listItems.push(listItem)
+  
+  
+  let arrayEntries = listItems.entries()
 
+  for (let [idx] of arrayEntries) {
+    listItems[idx].id = idx
+  }
+  
+  listItems.push(listItem)
   renderListItems(listItem);
 
   form.reset()
@@ -179,6 +186,7 @@ form.addEventListener("submit", event => {
   console.log(listItem.timestamp)
   console.log(listItem.finished)
   console.log(listItem)
+  console.log(listItems)
 
 })
 
