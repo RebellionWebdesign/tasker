@@ -4,7 +4,7 @@ const currentDay = new Date();
 let dayOfWeek = day[currentDay.getDay()];
 let currentDate = currentDay.toLocaleDateString("de-DE");
 
-//Global vriables for form, form reveal and form hide button
+//Global variable for form
 const form = document.getElementById("form")
 
 //Global variables for array generation
@@ -181,5 +181,4 @@ form.addEventListener("submit", event => {
   console.log(listItem)
 })
 
-//If the checkmark is clicked the "NO" in the status column changes to "YES"
-
+//If the checkmark is clicked the "NO" in the status column changes to "YES" and the taskName gets crossed out
