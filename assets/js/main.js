@@ -5,8 +5,6 @@ let dayOfWeek = day[currentDay.getDay()];
 let currentDate = currentDay.toLocaleDateString("de-DE");
 
 //Global vriables for form, form reveal and form hide button
-const addButton = document.getElementById("addbutton")
-const closeButton = document.getElementById("closebutton")
 const form = document.getElementById("form")
 
 //Global variables for array generation
