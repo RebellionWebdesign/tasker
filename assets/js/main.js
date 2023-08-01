@@ -66,7 +66,7 @@ function time() {
   hours = addZero(hours);
   minutes = addZero(minutes);
   seconds = addZero(seconds);
-  
+
 
   if (hours < 12) {
     dayTime.innerHTML = "AM"
@@ -86,8 +86,8 @@ function timeStamp(timeStamp) {
   hours = addZero(hours);
   minutes = addZero(minutes);
   seconds = addZero(seconds);
-  
-  return timeStamp = hours + ":" + minutes + ":" +  seconds
+
+  return timeStamp = hours + ":" + minutes + ":" + seconds
 }
 
 //Stores the listItems array as string in local storage
@@ -163,12 +163,12 @@ form.addEventListener("submit", event => {
   listItem.taskname = taskName.value.trim()
   listItem.timestamp = currentDate + "-" + timeStamp(timeStamp)
   listItem.deadline = deadLine.value.trim()
-  
+
   listItems.push(listItem)
 
   let lastListItem = listItems.lastIndexOf(listItem)
   if (lastListItem < listItems.length) {
-    listItem.id = lastListItem+1
+    listItem.id = lastListItem + 1
   }
 
   renderListItems(listItem);
