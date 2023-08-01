@@ -30,24 +30,20 @@
       <div class="section__container">
         <div id="list-item"></div>
           <div class="container__form">
-            <form id="form" class="container__task_form fadeInUp hide">
-              <label for="taskname">ENTER TASKNAME:</label>
-              <input type="text" id="taskname" name="taskname" required
-                minlength="5" maxlength="30" size="35" />
-              <label for="taskname">ENTER DEADLINE:</label>
-              <input type="date" id="date" name="date" min="2023-07-29" required/>
-              <input type="submit" value="ADD TASK" />
-              <img id="closebutton" src="assets/images/svg/circle-plus-solid.svg"
-                alt="the close task form button" />
-            </form>
-            <button><img id="addbutton"
-                src="assets/images/svg/circle-plus-solid.svg"
-                alt="the open task form button" /></button>
+      
+              <form id="form" class="container__task_form">
+                <label for="taskname">ENTER TASKNAME:</label>
+                <input type="text" id="taskname" name="taskname" required minlength="5" maxlength="30" size="35" />
+                <label for="taskname">ENTER DEADLINE:</label>
+                <input type="date" id="date" name="date" min="2023-07-29" required/>
+                <input type="submit" value="ADD TASK" />
+              </form>
+              
           </div>
-      </div>
+        </div>
   </main>
 
-  <footer>
+<footer>
     <div class="footer__container">
       <ul class="container__date-wrapper">
         <li id="day" class="footer__container__day"></li>
@@ -59,7 +55,7 @@
         <li id="daytime" class="footer__container__daytime"></li>
       </ul>
     </div>
-  </footer>
+</footer>
 
   <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
