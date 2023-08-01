@@ -12,9 +12,6 @@ let listItems = [];
 let taskName = document.getElementById("taskname");
 let deadLine = document.getElementById("date");
 
-//Object which holds task data
-
-
 /* This part of main.js displays the day of the week and the current date on the left ide of the footer.
 *  The exlanations is top to bottom:
 *  First we declare an array as a constant. It holds the weekdays as strings.
