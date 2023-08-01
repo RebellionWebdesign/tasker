@@ -121,22 +121,21 @@ function renderListItems(listItem) {
   const listContainer = document.getElementById("list-item")
   const listElement = document.createElement("ul")
   listElement.setAttribute("class", "todo-container")
-  listElement.setAttribute("id", "todo-container")
 
   listElement.innerHTML = `
-    <li id="task">${listItem.taskname}</li>
-    <li id="generated">${listItem.timestamp}</li>
-    <li id="deadline">${listItem.deadline}</li>
-    <li id="finished">${listItem.finished}</li>
+    <li class="task">${listItem.taskname}</li>
+    <li class="generated">${listItem.timestamp}</li>
+    <li class="deadline">${listItem.deadline}</li>
+    <li class="finished">${listItem.finished}</li>
     <li>
       <ul>
         <li>
-          <button id="finish">
+          <button class="finish">
             <img class="option-button" src="assets/images/svg/check-circle-solid.svg" alt="a finish symbol">
           </button>
         </li>
         <li>
-          <button id="delete">
+          <button class="delete">
             <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
           </button>
         </li>
@@ -144,13 +143,14 @@ function renderListItems(listItem) {
     </li>`
 
   listContainer.append(listElement)
-
 }
 
 //This part starts all of the scripts that should be started at document load
 document.addEventListener("DOMContentLoaded", () => {
   date()
   time()
+  taskName.value.trim()
+  taskName.focus()
   //getStoredItems()
 })
 
@@ -179,6 +179,7 @@ form.addEventListener("submit", event => {
   console.log(listItem.timestamp)
   console.log(listItem.finished)
   console.log(listItem)
+
 })
 
 //If the checkmark is clicked the "NO" in the status column changes to "YES" and the taskName gets crossed out
