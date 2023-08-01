@@ -169,7 +169,7 @@ form.addEventListener("submit", event => {
   let arrayEntries = listItems.entries()
 
   for (let [idx] of arrayEntries) {
-    listItems[idx].id = idx
+    //listItems[idx].id = idx
   }
   
   listItems.push(listItem)
