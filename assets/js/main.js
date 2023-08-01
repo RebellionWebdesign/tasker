@@ -18,7 +18,7 @@ let listItem = {
   taskname: "",
   timestamp: "",
   deadline: "",
-  finished: "NO",
+  finished: "UNFINISHED",
 }
 
 /* This part of main.js displays the day of the week and the current date on the left ide of the footer.
@@ -171,7 +171,7 @@ form.addEventListener("submit", event => {
   for (let [idx] of arrayEntries) {
     //listItems[idx].id = idx
   }
-  
+
   listItems.push(listItem)
   renderListItems(listItem);
 
