@@ -181,8 +181,5 @@ form.addEventListener("submit", event => {
   console.log(listItem)
 })
 
-// Sets the ID of the task list element to the index inside of the array
-
-
 //If the checkmark is clicked the "NO" in the status column changes to "YES"
 
