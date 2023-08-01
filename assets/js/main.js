@@ -13,13 +13,7 @@ let taskName = document.getElementById("taskname");
 let deadLine = document.getElementById("date");
 
 //Object which holds task data
-let listItem = {
-  id: "",
-  taskname: "",
-  timestamp: "",
-  deadline: "",
-  finished: "UNFINISHED",
-}
+
 
 /* This part of main.js displays the day of the week and the current date on the left ide of the footer.
 *  The exlanations is top to bottom:
@@ -161,18 +155,25 @@ document.addEventListener("DOMContentLoaded", () => {
 form.addEventListener("submit", event => {
   event.preventDefault();
 
+  let listItem = {
+    id: "",
+    taskname: "",
+    timestamp: "",
+    deadline: "",
+    finished: "UNFINISHED",
+  }
+
   listItem.taskname = taskName.value.trim()
   listItem.timestamp = currentDate + "-" + timeStamp(timeStamp)
   listItem.deadline = deadLine.value.trim()
   
-  
-  let arrayEntries = listItems.entries()
+  listItems.push(listItem)
 
-  for (let [idx] of arrayEntries) {
-    //listItems[idx].id = idx
+  let lastListItem = listItems.lastIndexOf(listItem)
+  if (lastListItem < listItems.length) {
+    listItem.id = lastListItem+1
   }
 
-  listItems.push(listItem)
   renderListItems(listItem);
 
   form.reset()
