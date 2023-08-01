@@ -101,21 +101,6 @@ function timeStamp(timeStamp) {
   return timeStamp = hours + ":" + minutes + ":" +  seconds
 }
 
-/* This script controls the behaviour of the add and close buttons.
-*
-*/
-addButton.addEventListener("click", () => {
-  form.classList.remove("hide")
-  addButton.classList.add("hide")
-  taskName.value.trim()
-  taskName.focus()
-})
-
-closeButton.addEventListener("click", () => {
-  form.classList.add("hide")
-  addButton.classList.remove("hide")
-})
-
 //Stores the listItems array as string in local storage
 //function storeItems() {
 //
