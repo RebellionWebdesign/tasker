@@ -112,6 +112,7 @@ function renderListItems(listItem) {
   const listContainer = document.getElementById("list-item")
   const listElement = document.createElement("ul")
   listElement.setAttribute("class", "todo-container")
+  listElement.setAttribute("data-attr", `${listItem.id}`)
 
   listElement.innerHTML = `
     <li class="task">${listItem.taskname}</li>
