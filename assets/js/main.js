@@ -111,6 +111,7 @@ function getStoredItems() {
 function renderListItems(listItem) {
   const listContainer = document.getElementById("list-item")
   const listElement = document.createElement("ul")
+  listElement.setAttribute("id", "todo-container-" + `${listItem.id}`)
   listElement.setAttribute("class", "todo-container")
   listElement.setAttribute("data-attr", `${listItem.id}`)
 
@@ -174,12 +175,22 @@ form.addEventListener("submit", event => {
       let index = listItems.findIndex(item => item.hasevent === "false")
       let finishBtn = document.getElementById("finish-" + listItem.id)
       let finishStatus = document.getElementById("finished-" + listItem.id)
+      let deleteBtn = document.getElementById("delete-" + listItem.id)
+      let getContainer = document.getElementById("todo-container-" + listItem.id)
       
       finishBtn.addEventListener("click", function() {
         finishStatus.innerHTML = "FINISHED!"
         listItems[index].finished = "FINISHED!"
         listItems[index].isfinished = "true"
         storeItems(listItems)
+      })
+
+      deleteBtn.addEventListener("click", function() {
+        if(confirm("Do you really want to delete " + listItems[index].taskname + "?") === true) {
+          getContainer.remove()
+          listItems.splice(index, 1)
+          storeItems(listItems)
+        }
       })
 
       listItems[index].hasevent = "true"
