@@ -153,6 +153,7 @@ form.addEventListener("submit", event => {
   event.preventDefault();
 
   let listItem = {
+    hasevent: "false",
     id: "",
     taskname: "",
     timestamp: "",
@@ -170,6 +171,14 @@ form.addEventListener("submit", event => {
   if (lastListItem < listItems.length) {
     listItem.id = lastListItem + 1
   }
+
+  listItems.forEach(function(listItem) {
+    if(listItem.hasevent != "true") {
+      let index = listItems.findIndex(item => item.hasevent === "false")
+      listItems[index].hasevent = "bananarama"
+      console.log(listItems[index].hasevent)
+    }
+  })
 
   renderListItems(listItem);
 
