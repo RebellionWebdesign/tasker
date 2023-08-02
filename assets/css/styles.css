@@ -315,3 +315,68 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     font-weight: 400;
     src: url('/assets/fonts/poppins/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
+
+  /*RESPONSIVE STYLES*/
+
+  @media screen and (max-width: 1440px) {
+    header {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    main {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    
+  }
+
+  @media screen and (max-width: 992px) {
+
+  }
+
+  @media screen and (max-width: 762px) {
+
+  }
+
+  @media screen and (max-width: 576px) {
+    header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }
