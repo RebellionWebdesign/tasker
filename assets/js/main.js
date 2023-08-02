@@ -172,7 +172,7 @@ form.addEventListener("submit", event => {
   //Task Status text to finished
   listItems.forEach(function(listItem) {
     if(listItem.hasevent != "true") {
-      let index = listItems.findIndex(item => item.hasevent === "false")
+      let finishIndex = listItems.findIndex(item => item.hasevent === "false")
       let finishBtn = document.getElementById("finish-" + listItem.id)
       let finishStatus = document.getElementById("finished-" + listItem.id)
       let deleteBtn = document.getElementById("delete-" + listItem.id)
@@ -180,8 +180,8 @@ form.addEventListener("submit", event => {
       
       finishBtn.addEventListener("click", function() {
         finishStatus.innerHTML = "FINISHED!"
-        listItems[index].finished = "FINISHED!"
-        listItems[index].isfinished = "true"
+        listItems[finishIndex].finished = "FINISHED!"
+        listItems[finishIndex].isfinished = "true"
         storeItems(listItems)
       })
 
@@ -193,7 +193,7 @@ form.addEventListener("submit", event => {
         }
       })
 
-      listItems[index].hasevent = "true"
+      listItems[finishIndex].hasevent = "true"
     } else {
       void(0)
     }
