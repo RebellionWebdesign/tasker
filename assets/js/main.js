@@ -23,7 +23,7 @@ let deadLine = document.getElementById("date");
 *  Those will be the containers for our text which is injected into the element by using .innerHTML
 *
 *  At last we need to make sure that the script fires when the DOM content is loaded. Otherwise the script
-*  doesnt work as intended because the innerHTML is injected before the elents holding the text are even     *  parsed.
+*  doesnt work as intended because the innerHTML is injected before the elements holding the text are even parsed.
 */
 
 function date() {
@@ -115,19 +115,19 @@ function renderListItems(listItem) {
   listElement.setAttribute("data-attr", `${listItem.id}`)
 
   listElement.innerHTML = `
-    <li class="task">${listItem.taskname}</li>
-    <li class="generated">${listItem.timestamp}</li>
-    <li class="deadline">${listItem.deadline}</li>
-    <li class="finished">${listItem.finished}</li>
+    <li id="task-${listItem.id}">${listItem.taskname}</li>
+    <li id="generated-${listItem.id}">${listItem.timestamp}</li>
+    <li id="deadline-${listItem.id}">${listItem.deadline}</li>
+    <li id="finished-${listItem.id}">${listItem.finished}</li>
     <li>
       <ul>
         <li>
-          <button class="finish">
+          <button class="finish" id="finish-${listItem.id}" data-attr-finish="${listItem.id}">
             <img class="option-button" src="assets/images/svg/check-circle-solid.svg" alt="a finish symbol">
           </button>
         </li>
         <li>
-          <button class="delete">
+          <button class="delete" id="delete-${listItem.id}" data-attr-delete="${listItem.id}">
             <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
           </button>
         </li>
@@ -136,15 +136,6 @@ function renderListItems(listItem) {
 
   listContainer.append(listElement)
 }
-
-//This part starts all of the scripts that should be started at document load
-document.addEventListener("DOMContentLoaded", () => {
-  date()
-  time()
-  taskName.value.trim()
-  taskName.focus()
-  getStoredItems()
-})
 
 /* This script controls the data passed from the add task form to the list array.
 *
@@ -155,6 +146,7 @@ form.addEventListener("submit", event => {
 
   let listItem = {
     hasevent: "false",
+    isfinished: "false",
     id: "",
     taskname: "",
     timestamp: "",
@@ -173,15 +165,26 @@ form.addEventListener("submit", event => {
     listItem.id = lastListItem + 1
   }
 
-  //listItems.forEach(function(listItem) {
-  //  if(listItem.hasevent != "true") {
-  //    let index = listItems.findIndex(item => item.hasevent === "false")
-  //    listItems[index].hasevent = "bananarama"
-  //    console.log(listItems[index].hasevent)
-  //  }
-  //})
-
   renderListItems(listItem);
+
+  //Checks if the finish button is existent, adds an event listener and changes the
+  //Task Status text to finished
+  listItems.forEach(function(listItem) {
+    if(listItem.hasevent != "true") {
+      let index = listItems.findIndex(item => item.hasevent === "false")
+      let finishBtn = document.getElementById("finish-" + listItem.id)
+      let finishStatus = document.getElementById("finished-" + listItem.id)
+      
+      finishBtn.addEventListener("click", function() {
+        finishStatus.innerHTML = "FINISHED!"
+        listItems[index].isfinished = "true"
+      })
+
+      listItems[index].hasevent = "true"
+    } else {
+      void(0)
+    }
+  })
 
   form.reset()
   taskName.value.trim()
@@ -198,4 +201,12 @@ form.addEventListener("submit", event => {
 
 })
 
-//If the checkmark is clicked the "NO" in the status column changes to "YES" and the taskName gets crossed out
+//This part starts all of the scripts that should be started at document load
+document.addEventListener("DOMContentLoaded", () => {
+  date()
+  time()
+  taskName.value.trim()
+  taskName.focus()
+  getStoredItems()
+  setFinished()
+})
