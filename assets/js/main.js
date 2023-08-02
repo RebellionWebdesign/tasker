@@ -177,7 +177,9 @@ form.addEventListener("submit", event => {
       
       finishBtn.addEventListener("click", function() {
         finishStatus.innerHTML = "FINISHED!"
+        listItems[index].finished = "FINISHED!"
         listItems[index].isfinished = "true"
+        storeItems(listItems)
       })
 
       listItems[index].hasevent = "true"
