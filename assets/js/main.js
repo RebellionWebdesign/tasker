@@ -91,21 +91,21 @@ function timeStamp(timeStamp) {
 }
 
 //Stores the listItems array as string in local storage
-//function storeItems() {
-//
-//  listItems.forEach(localStorage.setItem("tasks", JSON.stringify(listItems))) 
-//    
-//}
+function storeItems() {
+
+  localStorage.setItem("tasks", JSON.stringify(listItems))
+    
+}
 
 //This function reads the local storage and restores previous tasks
-//function getStoredItems() {
-//  const reference = localStorage.getItem("tasks")
-//  if (reference) {
-//    listItems = JSON.parse(reference)
-//    listItems.forEach(t => {
-//      renderListItems(t)
-//    });
-//}}
+function getStoredItems() {
+  const reference = localStorage.getItem("tasks")
+  if (reference) {
+    listItems = JSON.parse(reference)
+    listItems.forEach(t => {
+      renderListItems(t)
+    });
+}}
 
 //Render the todo list
 function renderListItems(listItem) {
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   time()
   taskName.value.trim()
   taskName.focus()
-  //getStoredItems()
+  getStoredItems()
 })
 
 /* This script controls the data passed from the add task form to the list array.
@@ -176,7 +176,7 @@ form.addEventListener("submit", event => {
   form.reset()
   taskName.value.trim()
   taskName.focus()
-  //storeItems(listItems)
+  storeItems(listItems)
 
   console.log(listItem.id)
   console.log(listItem.taskname)
