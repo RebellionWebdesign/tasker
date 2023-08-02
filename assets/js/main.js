@@ -176,7 +176,7 @@ form.addEventListener("submit", event => {
       let finishBtn = document.getElementById("finish-" + listItem.id)
       let finishStatus = document.getElementById("finished-" + listItem.id)
       let deleteBtn = document.getElementById("delete-" + listItem.id)
-      let getContainer = document.getElementById("todo-container-" + listItem.id)
+      let parentContainer = document.getElementById("todo-container-" + listItem.id)
       
       finishBtn.addEventListener("click", function() {
         finishStatus.innerHTML = "FINISHED!"
@@ -186,8 +186,8 @@ form.addEventListener("submit", event => {
       })
 
       deleteBtn.addEventListener("click", function() {
-        if(confirm("Do you really want to delete " + listItems[index].taskname + "?") === true) {
-          getContainer.remove()
+        if(confirm("Do you really want to delete " + listItem.taskname + "?") === true) {
+          parentContainer.remove()
           listItems.splice(index, 1)
           storeItems(listItems)
         }
