@@ -142,7 +142,7 @@ The website was deployed using GitHub Pages using these steps:
 
 The Screen Mockup for responsive design is copy pasted from [Am I Responsive](https://ui.dev/amiresponsive)
 
-The social icons, the hamburger icon and the close icon are from [FontAwesome](https://fontawesome.com/) in the free version, specifically these:
+The trash can and the checkmark icon are from [FontAwesome](https://fontawesome.com/) in the free version, specifically these:
 
 - [Solid Circle Checkmark](https://fontawesome.com/icons/circle-check?f=classic&s=solid)
 - [Trash Can](https://fontawesome.com/icons/trash?f=classic&s=solid)
