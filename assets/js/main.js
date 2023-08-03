@@ -12,26 +12,18 @@ let listItems = [];
 let taskName = document.getElementById("taskname");
 let deadLine = document.getElementById("date");
 
-/* This part of main.js displays the day of the week and the current date on the left ide of the footer.
-*  The exlanations is top to bottom:
-*  First we declare an array as a constant. It holds the weekdays as strings.
-*  Second we use the new Date() method to get the current date. The day of the week is computed
-*  by using the getDay() method which returns an integer (0 to 6) corresponding with the indexes
-*  of the day array. At last we convert the returned date to the de-DE locale (DD.MM.YYY).
-*
-*  Inside of the function date() we look for the elements which have the id´s day and date assigned.
-*  Those will be the containers for our text which is injected into the element by using .innerHTML
-*
-*  At last we need to make sure that the script fires when the DOM content is loaded. Otherwise the script
-*  doesnt work as intended because the innerHTML is injected before the elements holding the text are even parsed.
+/* The function date() generates the current day and date for display in the bottom left corner
+*  of the footer. It gets called ever second to ensure that it stays on the screen at reload. 
 */
-
 function date() {
   document.getElementById("day").innerHTML = dayOfWeek;
   document.getElementById("today").innerHTML = currentDate;
   setTimeout(function () { date() }, 1000)
 }
 
+/* The function setMinDate() generates the date and injects the value into the
+*  min attribute of the html date field. This ensures that dates cannot be in the past.
+*/
 function setMinDate() {
   let year = currentDay.toLocaleString("default", { year: "numeric" })
   let month = currentDay.toLocaleString("default", { month: "2-digit" })
@@ -41,23 +33,9 @@ function setMinDate() {
   document.getElementById("date").setAttribute("min", date)
 }
 
-/* We also would like to display the current time in 24h format (still adding AM and PM).
-*  Explanation is from top to bottom:
-*  The addZero() function looks if the time displayed is smaller than ten and adds zeroes to the numbers.
-*  As an example the time "nine o clock" will get displayed as 09:00 instead of 9:00.
-*  In the next step we use the new Date() function to get todays date. We can extract the time with
-*  the getHours() and getMinutes() methods [getSeconds() was used while developing to see if the clock
-*  gets updated automatically].
-*  Next on is getting the elements into varuables which have the id´s daytime and time assigned. We will
-*  inject the time 
-*  The if statement looks if the time is smaller than twelve [o clock] and assigns AM if it is before and PM
-*  if it is after 12 o clock.
-*  The time gets injected into the time element which is assigned to the clock variable by concatenating
-*  the hours and the minutes with the colon. The timeout is set to 1000 milliseconds which means that the
-*  time() function gets called every second.
-*  At last we add an event listener which fires the script when the DOM content is fuly loaded.
+/* The function addZero() concatenates a "0" in front of every number smaller than ten.
+*  If we give it a variable to work with we get a time format of 03:30PM instead 3:30PM
 */
-
 function addZero(i) {
   if (i < 10) {
     i = "0" + i
@@ -65,6 +43,9 @@ function addZero(i) {
   return i;
 }
 
+/* The function time() displays the current time in the bottom right corner of the screen.
+*  It uses the addZero() function to add zeroes to numbers smaller than 10.
+*/
 function time() {
   const newDay = new Date();
   let hours = newDay.getHours();
@@ -76,17 +57,23 @@ function time() {
   minutes = addZero(minutes);
   seconds = addZero(seconds);
 
-
+/* This snippet decides whether to add AM or PM to the clock on the screen.
+*  It considers everything before 12:00 to be AM, everything after PM.
+*/
   if (hours < 12) {
     dayTime.innerHTML = "AM"
   } else {
     dayTime.innerHTML = "PM"
   }
 
+  //The time() function also gets called every second, so the time doesnt stop.
   clock.innerText = hours + ":" + minutes;
   setTimeout(function () { time() }, 1000)
 }
 
+/* timeStamp() generates a date and a time in the format d.m.YYYY-hh:mm:ss.
+*  The timestamp gets displayed in the CREATION DATE column on the screen.
+*/
 function timeStamp(timeStamp) {
   const newDay = new Date();
   let hours = newDay.getHours();
@@ -104,7 +91,9 @@ function storeItems() {
   localStorage.setItem("tasks", JSON.stringify(listItems))
 }
 
-//This function reads the local storage and restores previous tasks
+/* getStoredItems() works on document load. It retrieves the listItems array from local storage
+*  and renders them to the viewport. 
+*/
 function getStoredItems() {
   const reference = localStorage.getItem("tasks")
   if (reference) {
@@ -112,7 +101,10 @@ function getStoredItems() {
     listItems.forEach(t => {
       renderListItems(t)
     });
-
+    
+    /* Since the restored items dont have event listeners we need to add them back with this subroutine.
+    *  It ensures that the event listeners only get added to restored items to prevent multiple assignments. 
+    */
     listItems.forEach(function (restoredItem) {
       if (restoredItem.hasevent === "true") {
         let restoredFinishIndex = listItems.findIndex(item => item.hasevent === "true")
@@ -120,12 +112,14 @@ function getStoredItems() {
         let restoredFinishStatus = document.getElementById("finished-" + restoredItem.id)
         let restoredDeleteBtn = document.getElementById("delete-" + restoredItem.id)
 
+        //Adds the functionality back to the finish button
         restoredFinishBtn.addEventListener("click", function () {
           restoredFinishStatus.innerHTML = "FINISHED!"
           listItems[restoredFinishIndex].finished = "FINISHED!"
           storeItems(listItems)
         })
 
+        //Adds the functionality back to the delete button
         restoredDeleteBtn.addEventListener("click", function () {
           if (confirm("Do you really want to delete " + restoredItem.taskname + "?") === true) {
             let restoredParentContainer = document.getElementById("todo-container-" + restoredItem.id)
@@ -137,6 +131,7 @@ function getStoredItems() {
         })
 
       } else {
+        //This does nothing is case the outermost if  is not true
         void (0)
       }
     })
@@ -144,7 +139,9 @@ function getStoredItems() {
   }
 }
 
-//Render the todo list
+/* renderListItems() takes the data generated by the task form ind inserts it to the string literals.
+*  In addition to that it injects dynamically elements (listElement) to display the data on the screen. 
+*/
 function renderListItems(listItem) {
   const listContainer = document.getElementById("list-item")
   const listElement = document.createElement("ul")
@@ -175,10 +172,9 @@ function renderListItems(listItem) {
   listContainer.append(listElement)
 }
 
-/* This script controls the data passed from the add task form to the list array.
-*
+/* This is basically the main function in TASKER. 
+*  
 */
-
 form.addEventListener("submit", event => {
   event.preventDefault();
 
@@ -243,7 +239,7 @@ form.addEventListener("submit", event => {
   storeItems(listItems)
 })
 
-//This part starts all of the scripts that should be started at document load
+//This part starts all of the functions that should be started at document load
 document.addEventListener("DOMContentLoaded", () => {
   date()
   setMinDate()
