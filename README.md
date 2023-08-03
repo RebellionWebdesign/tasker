@@ -26,9 +26,11 @@ You can visit the live website [here](https://rebellionwebdesign.github.io/taske
 - The tasklist is a scrollable container placed in the center of the screen. All tasks go here
 - The scroll feature for the tasklist gets triggered when the container overflows. There will be a styled scrollbar to the right
 - To give the user a clue what information is displayed the tasklist has a header row giving meaning to the following task columns
+- On mobiles the header row disappears and the information content sits inside of the task preceding the input data
 - [The Tasklist](docs/readme-images/tasker-task-list.png)
 - [The Scrollbar](docs/readme-images/tasker-task-list-scrollbar.png)
 - [The Header Row](docs/readme-images/tasker-task-list-header-row.png)
+- [Mobile View](docs/wireframes/tasker-wireframes-mobile.png)
 
 ### THE TASK
 
