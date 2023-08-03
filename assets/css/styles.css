@@ -368,10 +368,15 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 378px) {
     header {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .header__container__symbol {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     main {
@@ -379,8 +384,114 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
         padding-right: 10px;
     }
 
+    .container__tasklist__header {
+        display: none;
+    }
+
+    .task::before {
+        content: "TASKNAME: ";
+        font-family: montserrat, sans-serif;
+        font-size: 1rem;
+    }
+
+    .generated::before {
+        content: "CREATION DATE: ";
+        font-family: montserrat, sans-serif;
+        font-size: 1rem;
+    }
+
+    .deadline::before {
+        content: "DEADLINE: ";
+        font-family: montserrat, sans-serif;
+        font-size: 1rem;
+    }
+
+    .finished::before {
+        content: "STATUS: ";
+        font-family: montserrat, sans-serif;
+        font-size: 1rem;
+    }
+
+    #list-item > ul {
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    #list-item > ul > li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .todo-container > li {
+        width: 100%;
+    }
+
+    .todo-container > li > ul {
+        display: flex;
+        justify-content: end;
+    }
+
+    .delete {
+        padding-left: 15px;
+    }
+
+    .container__form {
+        height: 30%;
+        padding: 10px 0px;
+    }
+
+    .option-button {
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    .container__task_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input[type=text] {
+        width: 100%
+    }
+
+    label {
+        margin-top: 5px;
+    }
+
+    #taskname {
+        margin: 0;
+    }
+
+    #date {
+       width: 100%; 
+    }
+
+    input[type=submit] {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
     footer {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .footer__container {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .footer__container__day {
+        font-size: 18px;
+    }
+
+    .footer__container__date {
+        font-size: 12px;
     }
   }
