@@ -5,7 +5,7 @@ let dayOfWeek = day[currentDay.getDay()];
 let currentDate = currentDay.toLocaleDateString("de-DE");
 
 //Global variable for form
-const form = document.getElementById("form")
+const form = document.getElementById("form");
 
 //Global variables for array generation
 let listItems = [];
@@ -18,19 +18,19 @@ let deadLine = document.getElementById("date");
 function date() {
   document.getElementById("day").innerHTML = dayOfWeek;
   document.getElementById("today").innerHTML = currentDate;
-  setTimeout(function () { date() }, 1000)
+  setTimeout(function () { date(); }, 1000);
 }
 
 /* The function setMinDate() generates the date and injects the value into the
 *  min attribute of the html date field. This ensures that dates cannot be in the past.
 */
 function setMinDate() {
-  let year = currentDay.toLocaleString("default", { year: "numeric" })
-  let month = currentDay.toLocaleString("default", { month: "2-digit" })
-  let day = currentDay.toLocaleString("default", { day: "2-digit" })
-  let date = year + "-" + month + "-" + day
+  let year = currentDay.toLocaleString("default", { year: "numeric" });
+  let month = currentDay.toLocaleString("default", { month: "2-digit" });
+  let day = currentDay.toLocaleString("default", { day: "2-digit" });
+  let date = year + "-" + month + "-" + day;
 
-  document.getElementById("date").setAttribute("min", date)
+  document.getElementById("date").setAttribute("min", date);
 }
 
 /* The function addZero() concatenates a "0" in front of every number smaller than ten.
@@ -38,8 +38,8 @@ function setMinDate() {
 */
 function addZero(i) {
   if (i < 10) {
-    i = "0" + i
-  };
+    i = "0" + i;
+  }
   return i;
 }
 
@@ -57,18 +57,18 @@ function time() {
   minutes = addZero(minutes);
   seconds = addZero(seconds);
 
-/* This snippet decides whether to add AM or PM to the clock on the screen.
-*  It considers everything before 12:00 to be AM, everything after PM.
-*/
+  /* This snippet decides whether to add AM or PM to the clock on the screen.
+  *  It considers everything before 12:00 to be AM, everything after PM.
+  */
   if (hours < 12) {
-    dayTime.innerHTML = "AM"
+    dayTime.innerHTML = "AM";
   } else {
-    dayTime.innerHTML = "PM"
+    dayTime.innerHTML = "PM";
   }
 
   //The time() function also gets called every second, so the time doesnt stop.
   clock.innerText = hours + ":" + minutes;
-  setTimeout(function () { time() }, 1000)
+  setTimeout(function () { time(); }, 1000);
 }
 
 /* timeStamp() generates a date and a time in the format d.m.YYYY-hh:mm:ss.
@@ -83,58 +83,58 @@ function timeStamp(timeStamp) {
   minutes = addZero(minutes);
   seconds = addZero(seconds);
 
-  return timeStamp = hours + ":" + minutes + ":" + seconds
+  return timeStamp = hours + ":" + minutes + ":" + seconds;
 }
 
 //Stores the listItems array as string in local storage
 function storeItems() {
-  localStorage.setItem("tasks", JSON.stringify(listItems))
+  localStorage.setItem("tasks", JSON.stringify(listItems));
 }
 
 /* getStoredItems() works on document load. It retrieves the listItems array from local storage
 *  and renders them to the viewport. 
 */
 function getStoredItems() {
-  const reference = localStorage.getItem("tasks")
+  const reference = localStorage.getItem("tasks");
   if (reference) {
-    listItems = JSON.parse(reference)
+    listItems = JSON.parse(reference);
     listItems.forEach(t => {
-      renderListItems(t)
+      renderListItems(t);
     });
-    
+
     /* Since the restored items dont have event listeners we need to add them back with this subroutine.
     *  It ensures that the event listeners only get added to restored items to prevent multiple assignments. 
     */
     listItems.forEach(function (restoredItem) {
       if (restoredItem.hasevent === "true") {
-        let restoredFinishIndex = listItems.findIndex(item => item.hasevent === "true")
-        let restoredFinishBtn = document.getElementById("finish-" + restoredItem.id)
-        let restoredFinishStatus = document.getElementById("finished-" + restoredItem.id)
-        let restoredDeleteBtn = document.getElementById("delete-" + restoredItem.id)
+        let restoredFinishIndex = listItems.findIndex(item => item.hasevent === "true");
+        let restoredFinishBtn = document.getElementById("finish-" + restoredItem.id);
+        let restoredFinishStatus = document.getElementById("finished-" + restoredItem.id);
+        let restoredDeleteBtn = document.getElementById("delete-" + restoredItem.id);
 
         //Adds the functionality back to the finish button
         restoredFinishBtn.addEventListener("click", function () {
-          restoredFinishStatus.innerHTML = "FINISHED!"
-          listItems[restoredFinishIndex].finished = "FINISHED!"
-          storeItems(listItems)
-        })
+          restoredFinishStatus.innerHTML = "FINISHED!";
+          listItems[restoredFinishIndex].finished = "FINISHED!";
+          storeItems(listItems);
+        });
 
         //Adds the functionality back to the delete button
         restoredDeleteBtn.addEventListener("click", function () {
           if (confirm("Do you really want to delete " + restoredItem.taskname + "?") === true) {
-            let restoredParentContainer = document.getElementById("todo-container-" + restoredItem.id)
-            let restoredDeleteIndex = listItems.findIndex(item => item.id === restoredItem.id)
-            restoredParentContainer.remove()
-            listItems.splice(restoredDeleteIndex, 1)
-            storeItems(listItems)
+            let restoredParentContainer = document.getElementById("todo-container-" + restoredItem.id);
+            let restoredDeleteIndex = listItems.findIndex(item => item.id === restoredItem.id);
+            restoredParentContainer.remove();
+            listItems.splice(restoredDeleteIndex, 1);
+            storeItems(listItems);
           }
-        })
+        });
 
       } else {
         //This does nothing is case the outermost if  is not true
-        void (0)
+        void (0);
       }
-    })
+    });
 
   }
 }
@@ -143,11 +143,11 @@ function getStoredItems() {
 *  In addition to that it injects dynamically elements (listElement) to display the data on the screen. 
 */
 function renderListItems(listItem) {
-  const listContainer = document.getElementById("list-item")
-  const listElement = document.createElement("ul")
-  listElement.setAttribute("id", "todo-container-" + `${listItem.id}`)
-  listElement.setAttribute("class", "todo-container")
-  listElement.setAttribute("data-attr", `${listItem.id}`)
+  const listContainer = document.getElementById("list-item");
+  const listElement = document.createElement("ul");
+  listElement.setAttribute("id", "todo-container-" + `${listItem.id}`);
+  listElement.setAttribute("class", "todo-container");
+  listElement.setAttribute("data-attr", `${listItem.id}`);
 
   listElement.innerHTML = `
     <li class="task" id="task-${listItem.id}">${listItem.taskname}</li>
@@ -167,9 +167,9 @@ function renderListItems(listItem) {
           </button>
         </li>
       </ul>
-    </li>`
+    </li>`;
 
-  listContainer.append(listElement)
+  listContainer.append(listElement);
 }
 
 /* This is basically the main function in TASKER. 
@@ -186,17 +186,17 @@ form.addEventListener("submit", event => {
     timestamp: "",
     deadline: "",
     finished: "UNFINISHED",
-  }
+  };
 
-  listItem.taskname = taskName.value.trim()
-  listItem.timestamp = currentDate + "-" + timeStamp(timeStamp)
-  listItem.deadline = deadLine.value.trim()
+  listItem.taskname = taskName.value.trim();
+  listItem.timestamp = currentDate + "-" + timeStamp(timeStamp);
+  listItem.deadline = deadLine.value.trim();
 
-  listItems.push(listItem)
+  listItems.push(listItem);
 
-  let lastListItem = listItems.lastIndexOf(listItem)
+  let lastListItem = listItems.lastIndexOf(listItem);
   if (lastListItem < listItems.length) {
-    listItem.id = lastListItem + 1
+    listItem.id = lastListItem + 1;
   }
 
   renderListItems(listItem);
@@ -205,46 +205,46 @@ form.addEventListener("submit", event => {
   //Task Status text to finished
   listItems.forEach(function (listItem) {
     if (listItem.hasevent != "true") {
-      let finishIndex = listItems.findIndex(item => item.hasevent === "false")
-      let finishBtn = document.getElementById("finish-" + listItem.id)
-      let finishStatus = document.getElementById("finished-" + listItem.id)
-      let deleteBtn = document.getElementById("delete-" + listItem.id)
+      let finishIndex = listItems.findIndex(item => item.hasevent === "false");
+      let finishBtn = document.getElementById("finish-" + listItem.id);
+      let finishStatus = document.getElementById("finished-" + listItem.id);
+      let deleteBtn = document.getElementById("delete-" + listItem.id);
 
       finishBtn.addEventListener("click", function () {
-        finishStatus.innerHTML = "FINISHED!"
-        listItems[finishIndex].finished = "FINISHED!"
-        listItems[finishIndex].isfinished = "true"
-        storeItems(listItems)
-      })
+        finishStatus.innerHTML = "FINISHED!";
+        listItems[finishIndex].finished = "FINISHED!";
+        listItems[finishIndex].isfinished = "true";
+        storeItems(listItems);
+      });
 
       deleteBtn.addEventListener("click", function () {
         if (confirm("Do you really want to delete " + listItem.taskname + "?") === true) {
-          let parentContainer = document.getElementById("todo-container-" + listItem.id)
-          let deleteIndex = listItems.findIndex(item => item.id === listItem.id)
-          parentContainer.remove()
-          listItems.splice(deleteIndex, 1)
-          storeItems(listItems)
+          let parentContainer = document.getElementById("todo-container-" + listItem.id);
+          let deleteIndex = listItems.findIndex(item => item.id === listItem.id);
+          parentContainer.remove();
+          listItems.splice(deleteIndex, 1),
+            storeItems(listItems);
         }
-      })
+      });
 
-      listItems[finishIndex].hasevent = "true"
+      listItems[finishIndex].hasevent = "true";
     } else {
-      void (0)
+      void (0);
     }
-  })
+  });
 
-  form.reset()
-  taskName.value.trim()
-  taskName.focus()
-  storeItems(listItems)
-})
+  form.reset();
+  taskName.value.trim();
+  taskName.focus();
+  storeItems(listItems);
+});
 
 //This part starts all of the functions that should be started at document load
 document.addEventListener("DOMContentLoaded", () => {
-  date()
-  setMinDate()
-  time()
-  taskName.value.trim()
-  taskName.focus()
-  getStoredItems()
-})
+  date();
+  setMinDate();
+  time();
+  taskName.value.trim();
+  taskName.focus();
+  getStoredItems();
+});
