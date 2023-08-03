@@ -33,14 +33,13 @@ function date() {
 }
 
 function setMinDate() {
-  let year = currentDay.toLocaleString("default", {year: "numeric"})
-  let month = currentDay.toLocaleString("default", {month: "2-digit"})
-  let day = currentDay.toLocaleString("default", {day: "2-digit"})
+  let year = currentDay.toLocaleString("default", { year: "numeric" })
+  let month = currentDay.toLocaleString("default", { month: "2-digit" })
+  let day = currentDay.toLocaleString("default", { day: "2-digit" })
   let date = year + "-" + month + "-" + day
-  
 
   document.getElementById("date").setAttribute("min", date)
-} 
+}
 
 /* We also would like to display the current time in 24h format (still adding AM and PM).
 *  Explanation is from top to bottom:
@@ -102,9 +101,7 @@ function timeStamp(timeStamp) {
 
 //Stores the listItems array as string in local storage
 function storeItems() {
-
   localStorage.setItem("tasks", JSON.stringify(listItems))
-    
 }
 
 //This function reads the local storage and restores previous tasks
@@ -116,34 +113,36 @@ function getStoredItems() {
       renderListItems(t)
     });
 
-    listItems.forEach(function(restoredItem) {
-      if(restoredItem.hasevent === "true") {
+    listItems.forEach(function (restoredItem) {
+      if (restoredItem.hasevent === "true") {
         let restoredFinishIndex = listItems.findIndex(item => item.hasevent === "true")
         let restoredFinishBtn = document.getElementById("finish-" + restoredItem.id)
         let restoredFinishStatus = document.getElementById("finished-" + restoredItem.id)
         let restoredDeleteBtn = document.getElementById("delete-" + restoredItem.id)
-        
-        restoredFinishBtn.addEventListener("click", function() {
+
+        restoredFinishBtn.addEventListener("click", function () {
           restoredFinishStatus.innerHTML = "FINISHED!"
           listItems[restoredFinishIndex].finished = "FINISHED!"
           storeItems(listItems)
         })
 
-       restoredDeleteBtn.addEventListener("click", function() {
-         if(confirm("Do you really want to delete " + restoredItem.taskname + "?") === true) {
-           let restoredParentContainer = document.getElementById("todo-container-" + restoredItem.id)
-           let restoredDeleteIndex = listItems.findIndex(item => item.id === restoredItem.id)
-           restoredParentContainer.remove()
-           listItems.splice(restoredDeleteIndex, 1)
-           storeItems(listItems)
-       }})
+        restoredDeleteBtn.addEventListener("click", function () {
+          if (confirm("Do you really want to delete " + restoredItem.taskname + "?") === true) {
+            let restoredParentContainer = document.getElementById("todo-container-" + restoredItem.id)
+            let restoredDeleteIndex = listItems.findIndex(item => item.id === restoredItem.id)
+            restoredParentContainer.remove()
+            listItems.splice(restoredDeleteIndex, 1)
+            storeItems(listItems)
+          }
+        })
 
       } else {
-        void(0)
+        void (0)
       }
     })
-  
-}}
+
+  }
+}
 
 //Render the todo list
 function renderListItems(listItem) {
@@ -208,22 +207,22 @@ form.addEventListener("submit", event => {
 
   //Checks if the finish button is existent, adds an event listener and changes the
   //Task Status text to finished
-  listItems.forEach(function(listItem) {
-    if(listItem.hasevent != "true") {
+  listItems.forEach(function (listItem) {
+    if (listItem.hasevent != "true") {
       let finishIndex = listItems.findIndex(item => item.hasevent === "false")
       let finishBtn = document.getElementById("finish-" + listItem.id)
       let finishStatus = document.getElementById("finished-" + listItem.id)
       let deleteBtn = document.getElementById("delete-" + listItem.id)
-      
-      finishBtn.addEventListener("click", function() {
+
+      finishBtn.addEventListener("click", function () {
         finishStatus.innerHTML = "FINISHED!"
         listItems[finishIndex].finished = "FINISHED!"
         listItems[finishIndex].isfinished = "true"
         storeItems(listItems)
       })
 
-      deleteBtn.addEventListener("click", function() {
-        if(confirm("Do you really want to delete " + listItem.taskname + "?") === true) {
+      deleteBtn.addEventListener("click", function () {
+        if (confirm("Do you really want to delete " + listItem.taskname + "?") === true) {
           let parentContainer = document.getElementById("todo-container-" + listItem.id)
           let deleteIndex = listItems.findIndex(item => item.id === listItem.id)
           parentContainer.remove()
@@ -234,7 +233,7 @@ form.addEventListener("submit", event => {
 
       listItems[finishIndex].hasevent = "true"
     } else {
-      void(0)
+      void (0)
     }
   })
 
@@ -242,15 +241,6 @@ form.addEventListener("submit", event => {
   taskName.value.trim()
   taskName.focus()
   storeItems(listItems)
-
-  console.log(listItem.id)
-  console.log(listItem.taskname)
-  console.log(listItem.deadline)
-  console.log(listItem.timestamp)
-  console.log(listItem.finished)
-  console.log(listItem)
-  console.log(listItems)
-
 })
 
 //This part starts all of the scripts that should be started at document load
