@@ -69,10 +69,8 @@ You can visit the live website [here](https://rebellionwebdesign.github.io/taske
 The fonts used are Montserrat and Poppins Google Fonts. Montserrat is used for all the headings (headerbar and taslist header), Poppins is used for the task text and the clock/date display. In terms of design both fonts work together very well, as they are both clean and pleasing to the eye.
 
 - [Montserrat 400](docs/readme-images/tasker-montserrat-regular.png)
-
 - [Montserrat 800](docs/readme-images/tasker-montserrat-extra.png)
 - [Poppins 400](docs/readme-images/tasker-poppins-regular.png)
-- 
 ### WIREFRAMES
 
 - [TASKER on the Desktop](docs/wireframes/tasker-wireframes-desktop.png)
