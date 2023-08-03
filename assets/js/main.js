@@ -154,10 +154,10 @@ function renderListItems(listItem) {
   listElement.setAttribute("data-attr", `${listItem.id}`)
 
   listElement.innerHTML = `
-    <li id="task-${listItem.id}">${listItem.taskname}</li>
-    <li id="generated-${listItem.id}">${listItem.timestamp}</li>
-    <li id="deadline-${listItem.id}">${listItem.deadline}</li>
-    <li id="finished-${listItem.id}">${listItem.finished}</li>
+    <li class="task" id="task-${listItem.id}">${listItem.taskname}</li>
+    <li class="generated" id="generated-${listItem.id}">${listItem.timestamp}</li>
+    <li class="deadline" id="deadline-${listItem.id}">${listItem.deadline}</li>
+    <li class="finished" id="finished-${listItem.id}">${listItem.finished}</li>
     <li>
       <ul>
         <li>
