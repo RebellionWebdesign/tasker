@@ -115,6 +115,34 @@ function getStoredItems() {
     listItems.forEach(t => {
       renderListItems(t)
     });
+
+    listItems.forEach(function(restoredItem) {
+      if(restoredItem.hasevent === "true") {
+        let restoredFinishIndex = listItems.findIndex(item => item.hasevent === "true")
+        let restoredFinishBtn = document.getElementById("finish-" + restoredItem.id)
+        let restoredFinishStatus = document.getElementById("finished-" + restoredItem.id)
+        let restoredDeleteBtn = document.getElementById("delete-" + restoredItem.id)
+        
+        restoredFinishBtn.addEventListener("click", function() {
+          restoredFinishStatus.innerHTML = "FINISHED!"
+          listItems[restoredFinishIndex].finished = "FINISHED!"
+          storeItems(listItems)
+        })
+
+       restoredDeleteBtn.addEventListener("click", function() {
+         if(confirm("Do you really want to delete " + restoredItem.taskname + "?") === true) {
+           let restoredParentContainer = document.getElementById("todo-container-" + restoredItem.id)
+           let restoredDeleteIndex = listItems.findIndex(item => item.id === restoredItem.id)
+           restoredParentContainer.remove()
+           listItems.splice(restoredDeleteIndex, 1)
+           storeItems(listItems)
+       }})
+
+      } else {
+        void(0)
+      }
+    })
+  
 }}
 
 //Render the todo list
