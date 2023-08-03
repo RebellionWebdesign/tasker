@@ -9,11 +9,10 @@ You can visit the live website [here](https://rebellionwebdesign.github.io/taske
 ### USER GOALS (US1-PP2):
 
 - As a user I need a simple app to add and delete tasks
-
 - As a user I want my tasks to be saved
-
 - As a user I need the ability to mark tasks as finished
 
+![Am I responsive result](docs/readme-images/tasker-amiresponsive.png)
 
 ## FEATURES
 
@@ -58,8 +57,32 @@ You can visit the live website [here](https://rebellionwebdesign.github.io/taske
 ## DESIGN
 
 ## TOOLS USED
+### PREVIS
+
+The previs (eg hifi wireframes) was made using affinity designer. There is also a pdf in the docs folder to provide a viewable document if you dont have it. However, you can get a license or a trial [here](https://affinity.serif.com/en/designer/).
+
+### CODING
+
+The code was written in VSCODE using the following extensions:
+
+- Five Server for previewing with auto reload on save and live code changes - [Five Server](https://marketplace.visualstudio.com/items?itemName=yandeu.five-server)
+- HTML CSS Support for Intellisense id and class completion - [HTML CSS SUPPORT](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+- Previewing the responsive layouts were primarily made with [RESPONSIVELY](https://responsively.app/) an open source solution for previewing resposive layouts
+
+### TECHNOLOGIES
+
+- The structure of the site was made using [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML?retiredLocale=de)
+- The styles of the site were made using [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=en), more explicit:
+  - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout) for positioning elements on the page
+  - [CSS Root](https://developer.mozilla.org/en-US/docs/Web/CSS/:root?retiredLocale=en) for defining colors as variables
+  - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript?retiredLocale=de) was used to model interactivity as well as the persistence of data
+- [Git](https://git-scm.com/) for version control
+- [GitHub](https://github.com/) for hosting the source code
+- [GitHub Pages](https://pages.github.com/) for deploying the website to the web
 
 ## OTHER TOOLS
+
+- Fluid Headings (The TASKER logo) were made with [Modern Typography Tool](https://modern-fluid-typography.vercel.app/)
 
 ## TESTING
 
@@ -94,4 +117,16 @@ The website was deployed using GitHub Pages using these steps:
 
 ## CREDITS
 
+The Screen Mockup for responsive design is copy pasted from [Am I Responsive](https://ui.dev/amiresponsive)
+
+The social icons, the hamburger icon and the close icon are from [FontAwesome](https://fontawesome.com/) in the free version, specifically these:
+
+- [Solid Circle Checkmark](https://fontawesome.com/icons/circle-check?f=classic&s=solid)
+- [Trash Can](https://fontawesome.com/icons/trash?f=classic&s=solid)
+
 ## SAYING THANKS
+
+- [Juliia Konovalova](https://github.com/IuliiaKonovalova) for being my mentor and helping through some of the issues I encountered on the project
+- My family for bearing with me and for keeping me grounded.
+- [Code Institute](https://codeinstitute.net/de/) for letting me do this and for being a great school.
+- [Kevin Powell](https://www.youtube.com/@KevinPowell) for being such a great CSS teacher.
