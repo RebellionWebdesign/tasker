@@ -339,10 +339,6 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
   }
 
-  @media screen and (max-width: 1200px) {
-    
-  }
-
   @media screen and (max-width: 992px) {
     header {
         padding-left: 10px;
