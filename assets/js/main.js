@@ -197,7 +197,7 @@ form.addEventListener("submit", event => {
       deleteBtn.addEventListener("click", function() {
         if(confirm("Do you really want to delete " + listItem.taskname + "?") === true) {
           let parentContainer = document.getElementById("todo-container-" + listItem.id)
-          let deleteIndex = listItems.findIndex(item => item.hasevent === "true")
+          let deleteIndex = listItems.findIndex(item => item.id === listItem.id)
           parentContainer.remove()
           listItems.splice(deleteIndex, 1)
           storeItems(listItems)
