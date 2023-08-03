@@ -10,7 +10,9 @@ change them in one single place. */
 /* We want every element to use box-sizing and to have no margin/padding added by the browser.
 The same goes for before/after pseudo-elements. We select everything with the asterisk
 and every before/after pseudo elements */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -22,7 +24,8 @@ h1 {
 }
 
 body {
-    overflow-x: hidden; /*disables horizontal scrolling*/
+    overflow-x: hidden;
+    /*disables horizontal scrolling*/
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -92,14 +95,14 @@ main {
     font-family: montserrat, sans-serif;
 }
 
-.container__tasklist__header > ul {
+.container__tasklist__header>ul {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     padding: 10px 50px;
 }
 
-.container__tasklist__header > ul > li {
+.container__tasklist__header>ul>li {
     width: 150px;
 }
 
@@ -126,6 +129,7 @@ button {
 ::-webkit-scrollbar-track {
     background: var(--primary-color);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 5px;
@@ -147,13 +151,13 @@ button {
     padding: 5px 50px;
 }
 
-ul > li {
+ul>li {
     display: inline-block;
     list-style-type: none;
     padding: 0;
 }
 
-.todo-container > li {
+.todo-container>li {
     width: 150px;
 }
 
@@ -164,7 +168,7 @@ ul > li {
     margin-top: 3.5px;
 }
 
-.container__tasklist__greeter--wrapper > h1 {
+.container__tasklist__greeter--wrapper>h1 {
     font-family: montserrat, sans-serif;
     font-weight: 800;
     margin-bottom: 10px;
@@ -280,33 +284,40 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
 
 /* montserrat-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    src: url('/assets/fonts/montserrat/montserrat-v25-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* montserrat-800 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    src: url('/assets/fonts/montserrat/montserrat-v25-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-800 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 800;
-    src: url('/assets/fonts/montserrat/montserrat-v25-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    src: url('/assets/fonts/montserrat/montserrat-v25-latin-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
-  /* poppins-regular - latin */
+/* poppins-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    src: url('/assets/fonts/poppins/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    src: url('/assets/fonts/poppins/poppins-v20-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
-  /*RESPONSIVE STYLES*/
+/*RESPONSIVE STYLES*/
 
-  @media screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
     header {
         padding-left: 50px;
         padding-right: 50px;
@@ -321,9 +332,9 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
         padding-left: 50px;
         padding-right: 50px;
     }
-  }
+}
 
-  @media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {
     header {
         padding-left: 10px;
         padding-right: 10px;
@@ -367,23 +378,23 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
         font-size: 1rem;
     }
 
-    #list-item > ul {
+    #list-item>ul {
         padding: 5px 10px;
         display: flex;
         flex-direction: column;
         text-align: start;
     }
 
-    #list-item > ul > li {
+    #list-item>ul>li {
         margin: 0;
         padding: 0;
     }
 
-    .todo-container > li {
+    .todo-container>li {
         width: 100%;
     }
 
-    .todo-container > li > ul {
+    .todo-container>li>ul {
         display: flex;
         justify-content: end;
     }
@@ -422,7 +433,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
 
     #date {
-       width: 100%; 
+        width: 100%;
     }
 
     input[type=submit] {
@@ -449,9 +460,9 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     .footer__container__date {
         font-size: 12px;
     }
-  }
+}
 
-  @media screen and (max-width: 762px) {
+@media screen and (max-width: 762px) {
     header {
         padding-left: 10px;
         padding-right: 10px;
@@ -495,23 +506,23 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
         font-size: 1rem;
     }
 
-    #list-item > ul {
+    #list-item>ul {
         padding: 5px 10px;
         display: flex;
         flex-direction: column;
         text-align: start;
     }
 
-    #list-item > ul > li {
+    #list-item>ul>li {
         margin: 0;
         padding: 0;
     }
 
-    .todo-container > li {
+    .todo-container>li {
         width: 100%;
     }
 
-    .todo-container > li > ul {
+    .todo-container>li>ul {
         display: flex;
         justify-content: end;
     }
@@ -550,7 +561,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
 
     #date {
-       width: 100%; 
+        width: 100%;
     }
 
     input[type=submit] {
@@ -577,9 +588,9 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     .footer__container__date {
         font-size: 12px;
     }
-  }
+}
 
-  @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
     header {
         padding-left: 10px;
         padding-right: 10px;
@@ -623,23 +634,23 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
         font-size: 1rem;
     }
 
-    #list-item > ul {
+    #list-item>ul {
         padding: 5px 10px;
         display: flex;
         flex-direction: column;
         text-align: start;
     }
 
-    #list-item > ul > li {
+    #list-item>ul>li {
         margin: 0;
         padding: 0;
     }
 
-    .todo-container > li {
+    .todo-container>li {
         width: 100%;
     }
 
-    .todo-container > li > ul {
+    .todo-container>li>ul {
         display: flex;
         justify-content: end;
     }
@@ -678,7 +689,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
 
     #date {
-       width: 100%; 
+        width: 100%;
     }
 
     input[type=submit] {
@@ -705,9 +716,9 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     .footer__container__date {
         font-size: 12px;
     }
-  }
+}
 
-  @media screen and (max-width: 378px) {
+@media screen and (max-width: 378px) {
     header {
         padding-left: 10px;
         padding-right: 10px;
@@ -751,23 +762,23 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
         font-size: 1rem;
     }
 
-    #list-item > ul {
+    #list-item>ul {
         padding: 5px 10px;
         display: flex;
         flex-direction: column;
         text-align: start;
     }
 
-    #list-item > ul > li {
+    #list-item>ul>li {
         margin: 0;
         padding: 0;
     }
 
-    .todo-container > li {
+    .todo-container>li {
         width: 100%;
     }
 
-    .todo-container > li > ul {
+    .todo-container>li>ul {
         display: flex;
         justify-content: end;
     }
@@ -806,7 +817,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
 
     #date {
-       width: 100%; 
+        width: 100%;
     }
 
     input[type=submit] {
@@ -833,4 +844,4 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     .footer__container__date {
         font-size: 12px;
     }
-  }
+}
