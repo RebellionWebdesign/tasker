@@ -17,6 +17,44 @@ You can visit the live website [here](https://rebellionwebdesign.github.io/taske
 
 ## FEATURES
 
+### THE HEADERBAR
+
+- The headerbar displays the app name on the left and a logo on the right
+- [The Headerbar](docs/readme-images/tasker-headerbar.png)
+
+### THE TASKLIST
+
+- The tasklist is a scrollable container placed in the center of the screen. All tasks go here
+- The scroll feature for the tasklist gets triggered when the container overflows. There will be a styled scrollbar to the right
+- To give the user a clue what information is displayed the tasklist has a header row giving meaning to the following task columns
+- [The Tasklist](docs/readme-images/tasker-task-list.png)
+- [The Scrollbar](docs/readme-images/tasker-task-list-scrollbar.png)
+- [The Header Row](docs/readme-images/tasker-task-list-header-row.png)
+
+### THE TASK
+
+- The task row displays the following information:
+  - The task name - it can be max 30 characters long
+  - The tasks creation date - the date and the time are generated as soon the user presses the ADD TASK button
+  - The tasks deadline - Is a requirement for creating a task and has a dedicated date picker
+  - A status - The status is set to UNFINISHED by default
+  - Option buttons - The checkmark button changes the UNFINISHED status to FINISHED! and the trash can button deletes the task after prompting the user for confirmation
+- [The Task](docs/readme-images/tasker-task-list-task.png)
+- [Some Finished Tasks](docs/readme-images/tasker-task-list-finished.png)
+- [Task Deletion](docs/readme-images/tasker-task-list-delete.png)
+- [Deleted Task](docs/readme-images/tasker-task-list-deleted.png)
+
+### THE TASK FORM
+
+- The task forms enables the user to input data for each task, mainly the task name and the deadline. All other (except STATUS) are automatically generated
+- The ADD TASK button acts as a trigger for date and time generation, rendering the task items and attaching event listeners 
+- [The Task Form](docs/readme-images/tasker-task-form.png)
+
+### THE FOOTER
+
+- The footer displays the current day and date on the left side of the footer and a 24h clock with AM/PM display
+- [The Footer](docs/readme-images/tasker-footer.png)
+
 ## DESIGN
 
 ## TOOLS USED
