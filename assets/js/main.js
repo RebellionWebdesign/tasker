@@ -161,13 +161,13 @@ function renderListItems(listItem) {
     <li>
       <ul>
         <li>
-          <button class="finish" id="finish-${listItem.id}" data-attr-finish="${listItem.id}">
+          <button class="finish" id="finish-${listItem.id}" data-attr-finish="${listItem.id}" aria-label="mark finished">
             <img class="option-button" src="assets/images/svg/check-circle-solid.svg" alt="a finish symbol">
           </button>
         </li>
         <li>
           <button class="delete" id="delete-${listItem.id}" data-attr-delete="${listItem.id}">
-            <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol">
+            <img class="option-button" src="assets/images/svg/trash-solid.svg" alt="a trash symbol" aria-label="delete task">
           </button>
         </li>
       </ul>
