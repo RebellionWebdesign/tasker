@@ -32,6 +32,16 @@ function date() {
   setTimeout(function () { date() }, 1000)
 }
 
+function setMinDate() {
+  let year = currentDay.toLocaleString("default", {year: "numeric"})
+  let month = currentDay.toLocaleString("default", {month: "2-digit"})
+  let day = currentDay.toLocaleString("default", {day: "2-digit"})
+  let date = year + "-" + month + "-" + day
+  
+
+  document.getElementById("date").setAttribute("min", date)
+} 
+
 /* We also would like to display the current time in 24h format (still adding AM and PM).
 *  Explanation is from top to bottom:
 *  The addZero() function looks if the time displayed is smaller than ten and adds zeroes to the numbers.
@@ -218,6 +228,7 @@ form.addEventListener("submit", event => {
 //This part starts all of the scripts that should be started at document load
 document.addEventListener("DOMContentLoaded", () => {
   date()
+  setMinDate()
   time()
   taskName.value.trim()
   taskName.focus()
