@@ -1,8 +1,13 @@
-![readme header image](https://github.com/RebellionWebdesign/tasker/blob/e856f5a8a0bd8d17b1e723d9bdc56770bf0817bb/docs/readme-images/tasker-readme-header-image.png)
+![readme header image](docs/readme-images/tasker-readme-header.png)
 
-TASKER is a productivity app which aims to provide a means of making a to-do list. You can visit the live website here.
+TASKER is a productivity app which aims to provide a means of making a to-do list. You can visit the live website [here](https://rebellionwebdesign.github.io/tasker/).
 
 ## USER STORIES
+
+FIRST TIME USER GOALS (US1-PP2):
+
+- I am a first time user. I want to be able to use the features easily.
+- As a first time user i want to
 
 ## FEATURES
 
@@ -12,9 +17,9 @@ TASKER is a productivity app which aims to provide a means of making a to-do lis
 
 ## OTHER TOOLS
 
-- The entry and exit animations on the form container triggered by the plus icon were generated with [CSS Animations Generator](https://www.theappguruz.com/tag-tools/web/CSSAnimations/)
-
 ## TESTING
+
+For the testing results and mechanics please refer to the [TESTING.MD](https://github.com/RebellionWebdesign/tasker/blob/866f4086338f21d593d152445bd8058c7e19d97f/TESTING.MD) file
 
 ## DEPLOYMENT
 
@@ -26,13 +31,14 @@ The website was deployed using GitHub Pages using these steps:
 
 ## LOCAL DEPLOYMENT
 
-For local deployment follow these steps:
+### LOCAL DEPLOYMENT USING VSCODE:
 
 - Go to your GitHub folder on your local machine and execute this command from a git shell:  
-
-  ```bash
-  git clone https://github.com/RebellionWebdesign/fab-forever.git
-  ```
+```bash
+  git clone https://github.com/RebellionWebdesign/tasker.git
+```
+- If you want to view the app locally, open up your IDE (in this case VSCode), and install the [Five Server](https://marketplace.visualstudio.com/items?itemName=yandeu.five-server) extension if you need to.
+- Now open up the **index.html** page and press the "Go Live" button in the bottom right corner, the app should open in your default browser
 
 ## FUTURE IMPROVEMENTS
 
