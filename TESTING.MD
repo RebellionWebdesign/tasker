@@ -46,11 +46,11 @@ To ensure responsiveness the website was tested on the devtools built into the b
 
 ### SAMSUNG S22 ULTRA:
 
-
+- [SAMSUNG S22 DEVICE TEST](https://github.com/RebellionWebdesign/tasker/blob/bc46191376190e65a8b0b727abfa401f2b823d12/docs/testing-videos/tasker-device-s22.mp4)
 
 ### SAMSUNG TAB S7:
 
-
+- [SAMSUNG S7 DEVICE TEST](https://github.com/RebellionWebdesign/tasker/blob/bc46191376190e65a8b0b727abfa401f2b823d12/docs/testing-videos/tasker-device-s7.mp4)
 
 ## MANUAL TESTING
 
