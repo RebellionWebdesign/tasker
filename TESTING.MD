@@ -2,23 +2,23 @@
 
 ## COMPATIBILITY
 
-To ensure the website works on many different browsers, the website was tested on Chrome, Firefox Developer Edition, Edge and Brave.
+To ensure the website works on many different browsers, the website was tested on Chrome, Firefox Developer Edition, Edge and Brave. At the moment GitHubs drag and drop feature to view videos is not working. Please download the files from the repo given the links below.
 
 ### CHROME:
 
-
+- [CHROME COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/ba8d6538e1b6a4611f9ec4d94a0fd916341d5665/docs/testing-videos/tasker-chrome-compat.mp4)
 
 ### FIREFOX:
 
-
+- [FIREFOX COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/ba8d6538e1b6a4611f9ec4d94a0fd916341d5665/docs/testing-videos/tasker-firefox-compat.mp4)
 
 ### EDGE:
 
-
+- [EDGE COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/ba8d6538e1b6a4611f9ec4d94a0fd916341d5665/docs/testing-videos/tasker-edge-compat.mp4)
 
 ### BRAVE:
 
-
+- [BRAVE COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/ba8d6538e1b6a4611f9ec4d94a0fd916341d5665/docs/testing-videos/tasker-brave-compat.mp4)
 
 ## RESPONSIVE BEHAVIOR:
 
@@ -26,23 +26,23 @@ To ensure responsiveness the website was tested on the devtools built into the b
 
 ### CHROME:
 
-
+- [CHROME RESPONSIVE](https://github.com/RebellionWebdesign/tasker/blob/285894450cdbd447b68bc7464c13e1332e0b7217/docs/testing-videos/tasker-chrome-responsive.mp4)
 
 ### FIREFOX:
 
-
+- [FIREFOX RESPONSIVE](https://github.com/RebellionWebdesign/tasker/blob/285894450cdbd447b68bc7464c13e1332e0b7217/docs/testing-videos/tasker-firefox-responsive.mp4)
 
 ### EDGE:
 
-
+- [EDGE RESPONSIVE](https://github.com/RebellionWebdesign/tasker/blob/285894450cdbd447b68bc7464c13e1332e0b7217/docs/testing-videos/tasker-edge-responsive.mp4)
 
 ### BRAVE:
 
-
+- [BRAVE RESPONSIVE](https://github.com/RebellionWebdesign/tasker/blob/285894450cdbd447b68bc7464c13e1332e0b7217/docs/testing-videos/tasker-brave-responsive.mp4)
 
 ### RESPONSIVELY:
 
-
+- [RESPONSIVELY RESPONSIVE](https://github.com/RebellionWebdesign/tasker/blob/e9a1f60062f6b8d47ffc96d9b886f2f651cf8691/docs/testing-videos/tasker-responsively-compat.mp4)
 
 ### SAMSUNG S22 ULTRA:
 
