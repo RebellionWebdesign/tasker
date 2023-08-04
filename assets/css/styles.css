@@ -78,7 +78,7 @@ main {
 }
 
 #list-item:empty {
-    background-image: url("/assets/images/png/tasker-greeter.png");
+    background-image: url("assets/images/png/tasker-greeter.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
