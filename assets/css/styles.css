@@ -166,6 +166,11 @@ ul>li {
     height: 1.5rem;
     margin-left: 10px;
     margin-top: 3.5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.option-button:hover {
+    transform: scale(1.1);
 }
 
 .container__tasklist__greeter--wrapper>h1 {
