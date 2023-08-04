@@ -498,7 +498,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     main {
         padding-left: 10px;
         padding-right: 10px;
-        height: 88vh;
+        height: 100vh;
     }
 
     .container__tasklist__header {
@@ -555,8 +555,8 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
 
     .container__form {
-        height: 30%;
-        padding: 10px 0px;
+        height: 100%;
+        padding: 0px 0px;
     }
 
     .option-button {
@@ -594,6 +594,10 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     }
 
     footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 12vh;
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -610,6 +614,17 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
 
     .footer__container__date {
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 762px) and (orientation: landscape) {
+    .section__container {
+        flex-direction: row;
+    }
+
+    header {
+        height: 40px;
+        padding: 0px 10px;
     }
 }
 
