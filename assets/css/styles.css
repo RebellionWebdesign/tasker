@@ -77,6 +77,13 @@ main {
     height: 100%;
 }
 
+#list-item:empty {
+    background-image: url("/assets/images/png/tasker-greeter.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
 #list-item {
     width: 100%;
     height: 100%;
@@ -85,10 +92,6 @@ main {
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0px 10px;
-    background-image: url("/assets/images/png/tasker-greeter.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
 }
 
 .container__tasklist__header {
