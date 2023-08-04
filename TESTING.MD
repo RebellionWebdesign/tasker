@@ -81,7 +81,7 @@ Manual tests were peformed by myself, friends and family, my mentor and CI commu
 | Alert Box                    | click cancel                                        | nothing should happen                                        | yes    | yes    | |
 | Alert Box                    | click OK                                            | task gets deleted                                            | yes    | yes    | |
 | App Persistent State         | add tasks, close browser, reopen                    | tasks should be displayed as previously added                | yes    | yes    | |
-| Task Status Persistent State | add tasks, close browser, reopen                    | tasks marked as finished should display "FINISHED!" in status | yes    | yes    | |
+| Task Status Persistent State | finish tasks, close browser, reopen                 | tasks marked as finished should display "FINISHED!" in status | yes    | yes    | |
 
 ## CODE VALIDATION
 
