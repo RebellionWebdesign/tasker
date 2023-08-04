@@ -222,8 +222,8 @@ form.addEventListener("submit", event => {
           let parentContainer = document.getElementById("todo-container-" + listItem.id);
           let deleteIndex = listItems.findIndex(item => item.id === listItem.id);
           parentContainer.remove();
-          listItems.splice(deleteIndex, 1),
-            storeItems(listItems);
+          listItems.splice(deleteIndex, 1);
+          storeItems(listItems);
         }
       });
 
