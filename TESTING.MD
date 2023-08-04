@@ -87,12 +87,23 @@ The underlying code was validated with the following tools:
 
 ### NU HTML CHECKER
 
+- [NU HTML RESULT](docs/testing-images/tasker-nuhtml-result.png)
+
 ### JIGSAW CSS CHECKER
+
+- [JIGSAW CSS RESULT](docs/testing-images/tasker-jigsaw-result.png)
 
 ### JSHINT JS CHECKER
 
+- [JSHINT JS RESULT](docs/testing-images/tasker-jshint-results.png)
+
 ### WAVE ACCESSIBILITY CHECKER
 
+- [WAVE ACCESSIBILITY RESULT](docs/testing-images/tasker-wave-results.png)
+
 ## LIGHTHOUSE REPORTS
+
+- [GOOGLE LIGHTHOUSE RESULT DESKTOP](docs/testing-images/tasker-lighthouse-result-desktop.png)
+- [GOOGLE LIGHTHOUSE RESULT MOBILE](docs/testing-images/tasker-lighthouse-result-mobile.png)
 
 ## BUGS
