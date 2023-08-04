@@ -6,19 +6,19 @@ To ensure the website works on many different browsers, the website was tested o
 
 ### CHROME:
 
-https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-chrome-compat.mp4
+
 
 ### FIREFOX:
 
-https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-firefox-compat.mp4
+
 
 ### EDGE:
 
-https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-edge-compat.mp4
+
 
 ### BRAVE:
 
-https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-brave-compat.mp4
+
 
 ## RESPONSIVE BEHAVIOR:
 
@@ -58,28 +58,30 @@ Manual tests were peformed by myself, friends and family, my mentor and CI commu
 
 |             FEATURE              |               ACTION               |               EXPECTED RESULT               | TESTED | PASSED | COMMENT |
 | :------------------------------- | :--------------------------------- | :------------------------------------------ | :----- | :----- | :------ |
-| TASKER Logo             | view on mobile                                      | TASKER logo scales according to screen width                 | yes    | yes    |                        |
-| Tasklist Header         | view on mobile                                      | tasklist header lives in task entry                          | yes    | yes    |                        |
-| Greeter                 | load page                                           | greeter gets displayed if there are no tasks                 | yes    | yes    |                        |
-| Greeter                 | add task                                            | greeter disappears if there are tasks                        | yes    | yes    |                        |
-| Current Day Display     | open page                                           | current day gets displayed in the left footer                | yes    | yes    | updates every 24h      |
-| Current Date Display    | open page                                           | current date gets displayed in the left footer               | yes    | yes    | updates every 24h      |
-| Current Time Display    | open page                                           | current time gets displayed in the right footer              | yes    | yes    | updates every 60s      |
-| Current Daytime Display | open page                                           | current day gets displayed in the right footer               | yes    | yes    | updates every 12h      |
-| Task Creation Form      | press ADD TASK with empty task name                 | browser displays warning **"Please fill out this field"**    | yes    | yes    |                        |
-| Task Creation Form      | press ADD TASK with filled task name but empty date | browser displays warning **"Please fill out this field"**    | yes    | yes    |                        |
-| Taskname Field          | press ADD TASK with too short length                | browser displays warning **"Please lengthen this text to 5 characters or more..."** | yes    | yes    | min value is set to 5  |
-| Taskname Field          | enter very long task name                           | text length stops at 30 characters                           | yes    | yes    | max value is set to 30 |
-| Date Picker             | select past date                                    | must not work and past dates must be greyed out              | yes    | yes    |                        |
-| Task Creation Form      | press ADD TASK with both fields filled              | creates a task with given data                               | yes    | yes    |                        |
-| Task Entry              | create a task                                       | displays given data (taskname and deadline)                  | yes    | yes    |                        |
-| Task Entry              | create a task                                       | displays generated data (task status)                        | yes    | yes    |                        |
-| Finish Button           | hover the element                                   | element scales bigger                                        | yes    | yes    |                        |
-| Finish Button           | click element                                       | task status text changes to "FINISHED!"                      | yes    | yes    |                        |
-| Delete Button           | hover the element                                   | element scales bigger                                        | yes    | yes    |                        |
-| Delete Button           | click element                                       | displays warning "Do you really want to delete [TASKNAME]?"  | yes    | yes    |         |
-| Alert Box               | click cancel                                        | nothing should happen                                        | yes    | yes    | |
-| Alert Box               | click OK                                            | task gets deleted                                            | yes    | yes    | |
+| TASKER Logo                  | view on mobile                                      | TASKER logo scales according to screen width                 | yes    | yes    |                        |
+| Tasklist Header              | view on mobile                                      | tasklist header lives in task entry                          | yes    | yes    |                        |
+| Greeter                      | load page                                           | greeter gets displayed if there are no tasks                 | yes    | yes    |                        |
+| Greeter                      | add task                                            | greeter disappears if there are tasks                        | yes    | yes    |                        |
+| Current Day Display          | open page                                           | current day gets displayed in the left footer                | yes    | yes    | updates every 24h      |
+| Current Date Display         | open page                                           | current date gets displayed in the left footer               | yes    | yes    | updates every 24h      |
+| Current Time Display         | open page                                           | current time gets displayed in the right footer              | yes    | yes    | updates every 60s      |
+| Current Daytime Display      | open page                                           | current day gets displayed in the right footer               | yes    | yes    | updates every 12h      |
+| Task Creation Form           | press ADD TASK with empty task name                 | browser displays warning **"Please fill out this field"**    | yes    | yes    |                        |
+| Task Creation Form           | press ADD TASK with filled task name but empty date | browser displays warning **"Please fill out this field"**    | yes    | yes    |                        |
+| Taskname Field               | press ADD TASK with too short length                | browser displays warning **"Please lengthen this text to 5 characters or more..."** | yes    | yes    | min value is set to 5  |
+| Taskname Field               | enter very long task name                           | text length stops at 30 characters                           | yes    | yes    | max value is set to 30 |
+| Date Picker                  | select past date                                    | must not work and past dates must be greyed out              | yes    | yes    |                        |
+| Task Creation Form           | press ADD TASK with both fields filled              | creates a task with given data                               | yes    | yes    |                        |
+| Task Entry                   | create a task                                       | displays given data (taskname and deadline)                  | yes    | yes    |                        |
+| Task Entry                   | create a task                                       | displays generated data (task status)                        | yes    | yes    |                        |
+| Finish Button                | hover the element                                   | element scales bigger                                        | yes    | yes    |                        |
+| Finish Button                | click element                                       | task status text changes to "FINISHED!"                      | yes    | yes    |                        |
+| Delete Button                | hover the element                                   | element scales bigger                                        | yes    | yes    |                        |
+| Delete Button                | click element                                       | displays warning "Do you really want to delete [TASKNAME]?"  | yes    | yes    |         |
+| Alert Box                    | click cancel                                        | nothing should happen                                        | yes    | yes    | |
+| Alert Box                    | click OK                                            | task gets deleted                                            | yes    | yes    | |
+| App Persistent State         | add tasks, close browser, reopen                    | tasks should be displayed as previously added                | yes    | yes    | |
+| Task Status Persistent State | add tasks, close browser, reopen                    | tasks marked as finished should display "FINISHED!" in status | yes    | yes    | |
 
 ## CODE VALIDATION
 
