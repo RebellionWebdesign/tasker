@@ -6,7 +6,7 @@ To ensure the website works on many different browsers, the website was tested o
 
 ### CHROME:
 
-https://github.com/RebellionWebdesign/tasker/blob/8ec172bbce4e2da627ca2d9b435c8e89397c85e9/docs/testing-videos/tasker-chrome-compat.mp4
+
 
 ### FIREFOX:
 
