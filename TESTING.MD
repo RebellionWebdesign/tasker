@@ -6,19 +6,19 @@ To ensure the website works on many different browsers, the website was tested o
 
 ### CHROME:
 
-- [CHROME COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-chrome-compat.mp4)
+https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-chrome-compat.mp4
 
 ### FIREFOX:
 
-- [FIREFOX COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-firefox-compat.mp4)
+https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-firefox-compat.mp4
 
 ### EDGE:
 
-- [EDGE COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-edge-compat.mp4)
+https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-edge-compat.mp4
 
 ### BRAVE:
 
-- [BRAVE COMPATIBILITY](https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-brave-compat.mp4)
+https://github.com/RebellionWebdesign/tasker/blob/9e72b1ebe20fa99e94e0d6a471bddc9190d1080d/docs/testing-videos/tasker-brave-compat.mp4
 
 ## RESPONSIVE BEHAVIOR:
 
