@@ -1,39 +1,28 @@
-//Global Variables for date display
+/* 
+*  Provides the date() function with de-DE formatted strings for the date display.
+*  The date variables get derived from the currentDay variable. The function gets called
+*  on DOM load.
+*/
 const day = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
 const currentDay = new Date();
 let dayOfWeek = day[currentDay.getDay()];
-let currentDate = currentDay.toLocaleDateString("de-DE");
+let currentDate = currentDay.toLocaleDateString("de-DE", {day: "2-digit", month: "2-digit", year: "numeric"});
 
-//Global variable for form
+// Selects the form element with an id of form from the DOM
 const form = document.getElementById("form");
 
-//Global variables for array generation
+/* 
+*  The array listItems is initialized globally because we need to work later on it.
+*  It holds the data displayed on screen and saved to local storage. In addition
+*  we select the taskname id (form text input) and the deadline (form date input)
+*  for later use.
+*/
 let listItems = [];
 let taskName = document.getElementById("taskname");
 let deadLine = document.getElementById("date");
 
-/* The function date() generates the current day and date for display in the bottom left corner
-*  of the footer. It gets called ever second to ensure that it stays on the screen at reload. 
-*/
-function date() {
-  document.getElementById("day").innerHTML = dayOfWeek;
-  document.getElementById("today").innerHTML = currentDate;
-  setTimeout(function () { date(); }, 1000);
-}
-
-/* The function setMinDate() generates the date and injects the value into the
-*  min attribute of the html date field. This ensures that dates cannot be in the past.
-*/
-function setMinDate() {
-  let year = currentDay.toLocaleString("default", { year: "numeric" });
-  let month = currentDay.toLocaleString("default", { month: "2-digit" });
-  let day = currentDay.toLocaleString("default", { day: "2-digit" });
-  let date = year + "-" + month + "-" + day;
-
-  document.getElementById("date").setAttribute("min", date);
-}
-
-/* The function addZero() concatenates a "0" in front of every number smaller than ten.
+/* 
+*  The function addZero() concatenates a "0" in front of every number smaller than ten.
 *  If we give it a variable to work with we get a time format of 03:30PM instead 3:30PM
 */
 function addZero(i) {
@@ -43,8 +32,35 @@ function addZero(i) {
   return i;
 }
 
-/* The function time() displays the current time in the bottom right corner of the screen.
-*  It uses the addZero() function to add zeroes to numbers smaller than 10.
+/* 
+*  The function date() generates the current day and date for display in the bottom left corner
+*  of the footer. It gets called every second to ensure that it stays on the screen at reload.
+*  It gets its data from the variables block on the top of the document. 
+*/
+function date() {
+  document.getElementById("day").innerHTML = dayOfWeek;
+  document.getElementById("today").innerHTML = currentDate;
+  setTimeout(function () { date(); }, 1000);
+}
+
+/* 
+*  The function setMinDate() generates the date and injects the value into the
+*  min attribute of the html date field. This ensures that dates cannot be in the past.
+*  In addition to to that, it also provides the default text for the date field.
+*/
+function setMinDate() {
+  let year = currentDay.toLocaleString("default", { year: "numeric" });
+  let month = currentDay.toLocaleString("default", { month: "2-digit" });
+  let day = currentDay.toLocaleString("default", { day: "2-digit" });
+  let date = year + "-" + month + "-" + day;
+
+  document.getElementById("date").setAttribute("min", date);
+  document.getElementById("date").setAttribute("value", date);
+}
+
+/* 
+*  The function time() displays the current time in the bottom right corner of the screen.
+*  It uses the addZero() function to add zeroes to numbers smaller than 10. 
 */
 function time() {
   const newDay = new Date();
