@@ -619,10 +619,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
 @media screen and (max-width: 762px) and (orientation: landscape) {
    
     main {
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
+        height: 100dvh;
     }
 
     .section__container {
@@ -800,7 +797,7 @@ https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
     main {
         padding-left: 10px;
         padding-right: 10px;
-        height: 88vh;
+        height: calc(100vh - 12vh);
     }
 
     .container__tasklist__header {
