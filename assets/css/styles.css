@@ -82,6 +82,7 @@ main {
     padding-bottom: 6vh;
 }
 
+/*This displays the greeter image when the list-item element is empty, default is hidden (below)*/
 #list-item:empty {
     background-image: url("https://rebellionwebdesign.github.io/tasker/assets/images/png/tasker-greeter.png");
     background-repeat: no-repeat;
