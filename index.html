@@ -18,6 +18,7 @@
 </head>
 
 <body>
+  <!--The header element only displays a text logo and an app logo-->
   <header>
     <div class="header__container">
       <h1 class="header__container__logo">TASKER</h1>
@@ -26,6 +27,7 @@
     </div>
   </header>
 
+  <!--We only use the main element here because we have a one page app which doesnt have sections-->
   <main>
     <div class="section__container">
       <div class="container__tasklist__header">
@@ -37,7 +39,9 @@
             <li>OPTIONS</li>
           </ul>
         </div>
+        <!--This is the container for the listItems-->
       <div id="list-item"></div>
+      <!--This is the form at the bottom of the screen-->
       <div class="container__form">
         <form id="form" class="container__task_form">
           <label for="taskname">ENTER TASKNAME:</label>
@@ -52,7 +56,7 @@
       </div>
     </div>
   </main>
-
+  <!--The footer displays day, date, time and daytime-->
   <footer>
     <div class="footer__container">
       <ul class="container__date-wrapper">
