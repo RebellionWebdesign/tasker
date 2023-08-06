@@ -109,3 +109,9 @@ The underlying code was validated with the following tools:
 - [GOOGLE LIGHTHOUSE RESULT MOBILE](docs/testing-images/tasker-lighthouse-result-mobile.png)
 
 ## BUGS
+
+- The first bug I encountered was about the object holding the taskItem data getting overridden each time a new object was made.
+
+  This means every object in the listItems array got overridden with the new value of a new created object. Reason was, that the listItem object was in global scope. Having the listItem object in local scope inside the submit event listener fixed the problem.
+
+- The second bug was about deleting items from the array. Each time the delete button was clicked it seemingly deleted the correct item from the viewport, but upon reloading a different item was restored. The reason this happened was that I used findIndex() with a search value of hasevent: "true" which returns **the first** object passing the test. So basically the correct HTML container got deleted, but the incorrect array item was deleted. For instance: click delete on Item A from 3 items would delete item A, but then deleting item C from two items would delete item B keeping item C in memory and update the Item B to have the content of item C. This was resolved by changing the check to look for the particular index of the clicked item. It still retrns the first element passing the test, but since there is only one unique id given to each item it deletes the correct one from the view and the array.
