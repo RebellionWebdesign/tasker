@@ -2,7 +2,12 @@
 
 ## COMPATIBILITY
 
-To ensure the website works on many different browsers, the website was tested on Chrome, Firefox Developer Edition, Edge and Brave. At the moment GitHubs drag and drop feature to view videos is not working. Please download the files from the repo given the links below.
+To ensure the website works on many different browsers, the website was tested on Chrome, Firefox Developer Edition, Edge and Brave. At the moment GitHubs drag and drop feature to view videos is not working. Please download the files from the repo given the links below. To do so follow the directions:
+
+- Follow the video link you want to see
+- On the right hand side is the area where usually the content is displayed
+- In the content box click on the upper right download symbol
+- Enjoy the file
 
 ### CHROME:
 
