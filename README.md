@@ -109,7 +109,7 @@ The code was written in VSCODE using the following extensions:
 
 ## TESTING
 
-For the testing results and mechanics please refer to the [TESTING.MD]https://github.com/RebellionWebdesign/tasker/blob/fd7e3913a131014ba9d9c3629afba471497dda13/TESTING.md) file
+For the testing results and mechanics please refer to the [TESTING.md](https://github.com/RebellionWebdesign/tasker/blob/fd7e3913a131014ba9d9c3629afba471497dda13/TESTING.md) file
 
 ## DEPLOYMENT
 
