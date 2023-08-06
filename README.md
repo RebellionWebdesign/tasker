@@ -132,11 +132,11 @@ The website was deployed using GitHub Pages using these steps:
 
 ## FUTURE IMPROVEMENTS
 
-- *Make the app save ts data to a database.* Currently the app makes its state persistent by saving task entries to the browsers local storage. While this works it doesnt allow for date being synced to different devices. This means that each used browser holds different data in its local storage.
+- *Make the app save its data to a database.* Currently the app makes its state persistent by saving task entries to the browsers local storage. While this works it doesnt allow for data being synced to different devices. This means that each used browser holds different data in its local storage.
 - Even if I think I have improved on this I still need to make better commit messages.
 - *Give the app the ability to edit the task name*. Currently if you have a typo you need to delete the complete task and start over again.
 - Include a check if the set deadline has already passed to give the user a notification if a task is late.
-- *Bring the greeter back.* Initially the app had a greeter which explains what to do to the user. While the interface is fairly easy to understand, a greeter would be a great addition to the user experience.
+- 
 
 ## CREDITS
 
